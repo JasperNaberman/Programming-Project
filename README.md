@@ -1,8 +1,8 @@
 # Project Proposal
 
-Course: Programmeerproject
-Name: Jasper Naberman
-Student number: 10787224
+Course: Programmeerproject  
+Name: Jasper Naberman  
+Student number: 10787224  
 
 ## Problem Statement
 This is a statement concerning the problem the finished product will solve.
