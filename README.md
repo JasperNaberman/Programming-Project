@@ -23,6 +23,7 @@ Features for the minimum viable product (MVP):
 Optional features:
 * A button to show different datasets seperating refugees and other immigrants
 * A bar chart showing the countries the immigrants originated from.
+* Drop down menu to select a country's history of immigration in the line graph
 
 ## Prerequisites
 #### Data Sources
