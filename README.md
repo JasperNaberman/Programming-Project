@@ -12,6 +12,9 @@ In the current social media environment, a lot of arguing about immigration take
 ## Solution
 The idea for this product is to provide a solid and neutral basis for further debate using data from all around Europe to visualize the actual amount of immigration facing the continent.
 
+A visual sketch of the final product:
+![](doc/Visualisation_Sketch.jpeg)
+
 A list of main features available to users:
 
 Features for the minimum viable product (MVP):
@@ -19,11 +22,11 @@ Features for the minimum viable product (MVP):
 * Show visualisations linked to that specific country
 * Show an interactive crosshair on the line chart
 * Select a bar on the bar chart, shows the corresponding country on the map
+* Drop down menu to select a country's history of immigration in the line graph
+* A button to show different datasets seperating refugees and other immigrants
 
 Optional features:
-* A button to show different datasets seperating refugees and other immigrants
-* A bar chart showing the countries the immigrants originated from.
-* Drop down menu to select a country's history of immigration in the line graph
+* A second bar chart showing the countries the immigrants originated from.
 
 ## Prerequisites
 #### Data Sources
