@@ -19,7 +19,7 @@ Student number: 10787224
 
 
 ## Description and Implementation
-The visualizations will be implemented in different files. They are defined as functions. These functions will be called in a main file. In this main file the data will be loaded, vizualisaiton functions will be imported and user interactivity will be concretized.
+The visualizations will be implemented in different files. They are defined as functions. These functions will be called in a main file. In this main file the data will be loaded, vizualization functions will be imported and user interactivity will be concretized.
 
 ## APIs and D3 plugins
 The elements in the following list will provide functionality for my application:
