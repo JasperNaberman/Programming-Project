@@ -16,7 +16,11 @@ Student number: 10787224
    The dataset gives an insight in the composition of immigrant streams, separating 'nationals' and 'non-nationals' by citizenship.
 
 ## Diagram of Technical Components
-
+This is a sketch of idea for the website; starting from a home screen the user can go to two different pages: a page with the different visualisations and interactive components, and a page with additional information such as contact info, sources, and a small story about the site and it's applications.
+![](doc/Technical_Components.png)
+  
+Below is a closer look at the first possible page the user can go to; the page with the different visualisations and interactive components.
+![](doc/TechComp_VisualisationPage.jpeg)
 
 ## Description and Implementation
 The visualizations will be implemented in different files. They are defined as functions. These functions will be called in a main file. In this main file the data will be loaded, vizualization functions will be imported and user interactivity will be concretized.
