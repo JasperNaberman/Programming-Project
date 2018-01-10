@@ -16,10 +16,45 @@ Student number: 10787224
    The dataset gives an insight in the composition of immigrant streams, separating 'nationals' and 'non-nationals' by citizenship.
 
 ## Diagram of Technical Components
-
+This is a sketch of idea for the website; starting from a home screen the user can go to two different pages: a page with the different visualisations and interactive components, and a page with additional information such as contact info, sources, and a small story about the site and it's applications.
+![](doc/Technical_Components.png)
+  
+Below is a closer look at the first possible page the user can go to; the page with the different visualisations and interactive components.
+![](doc/TechComp_VisualisationPage.jpg)
 
 ## Description and Implementation
-The visualizations will be implemented in different files. They are defined as functions. These functions will be called in a main file. In this main file the data will be loaded, vizualization functions will be imported and user interactivity will be concretized.
+The visualizations will be implemented in different files:
+* The interactive map of Europe will be created using TopoJSON. This interactive visualization will be created as a seperate function.
+* The pie chart will be created using D3 and it's features. This visualization will be created as a seperate function.
+* The interactive bar chart will be created using D3 and it's features. This interactive visualization will be created as a seperate function.  
+
+
+All three of these functions will be called in a main JavaScript file. In this main file the data will be loaded, the visualization-functions will be called, and user interactivity will be implemented.  
+As is seen on the above image of the visualizations-screen, the user has multiple possibilities to interact with the webpage. The implementation and interaction of these possibilities will be discussed in the list below.
+* **Bar chart:** this barchart will show the absolute amount of immigrants per country that has entered in 2015. This is taken from the Eurostat dataset which will be converted to json-format. On clicking on a bar, these two things will happen:
+    * The clicked bar will be highlighted
+    * The data of the country that belongs to the bar will be displayed in the pie chart. This is done by searching the dataset used for the pie chart with the name of the selected country-bar.
+* **Pie chart:** this chart will chow the composition of immigrant streams per country or for the whole of Europe, separating 'nationals' and 'non-nationals' by citizenship. This is taken from the Eurostat dataset which will be converted to json-format.
+* **Europe map:** this is an interactive map of Europe, in which the color gradient will represent the absolute amount of immigrants per country that has entered in 2015. This is taken from the Eurostat dataset which will be converted to json-format. On clicking on a country, these three things will happen:
+    * The clicked country will be highlighted on the map
+    * The bar that corresponds with the clicked country will be highlighted in the bar chart. This is done by searching the bar chart data with the name of the clicked country.
+    * he data of the clicked country will be displayed in the pie chart. This is done by searching the dataset used for the pie chart with the name of the selected country-bar.
+* **Checkbox:** checking this box will change the bars from displaying absolute immigration data to relative data, by computing the amount of immigrants per 1,000 capita. This is done by taking the absolute immigration data from the barchart, and combining this data with the population dataset. This way the correct relative amount can be computed for each country.
+* **Drop down menu:** this menu belongs with the pie chart and will let you select a European country (or the whole of Europe), to be displayed in the pie chart. This data is taken from the Eurostat dataset which will be converted to json-format. On selection of a country, these three things will happen:
+    * The data of the selected country will be displayed in the pie chart.
+    * The bar of the country corresponding with the selected country will be highlighted
+    * The selected country will be highlighted in the TopoJSON map of Europe
+
+
+#### Main functions
+* drawMap() -> is called at initialization of the webpage, and selection of a bar in the barchart / country in the sunburst
+* drawSunburst() -> is called at initialization of the webpage, and selection of a bar in the barchart / country on the map
+* drawBarchart() -> is called at initialization of the webpage, and selection of a country on the map / country in the sunburst
+
+
+#### Helper functions
+* calculatePer1000Capita(totalImmigrants, totalPopulation) -> calculates the amount of immigrants per 1000 capita of the original population of a country
+* calculatePercentage(totalImmigrants, totalPopulation) -> calculates the ratio (in percentages) of immigrants and the original population of a country
 
 ## APIs and D3 plugins
 The elements in the following list will provide functionality for my application:

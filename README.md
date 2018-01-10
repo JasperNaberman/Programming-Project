@@ -13,7 +13,7 @@ In the current social media environment, a lot of arguing about immigration take
 The idea for this product is to provide a solid and neutral basis for further debate using data from all around Europe to visualize the actual amount of immigration facing the continent.
 
 A visual sketch of the final product:
-![](doc/Visualisation_Sketch.jpeg)
+![](doc/TechComp_VisualisationPage)
 
 A list of main features available to users:
 
