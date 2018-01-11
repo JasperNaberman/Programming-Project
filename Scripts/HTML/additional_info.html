@@ -1,0 +1,66 @@
+<!--
+	additional_info.html
+	
+	Jasper Naberman
+	10787224
+	Programming Project
+	
+	A html script for the additional info page of the programming project
+-->
+
+<!DOCTYPE html>
+<meta charset = "utf-8">
+
+<html>
+	<head>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			body {
+				margin: 0;
+			}
+
+			/* Create two equal columns that floats next to each other */
+			.column {
+				float: left;
+				width: 33.333333333%;
+				padding: 10px;
+			}
+
+			/* Clear floats after the columns */
+			.row:after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+
+		<p><b><h1>Additional Information</h1></b></p>
+
+		<div class="row">
+			<div class="column" style="background-color:#aaa;">
+				<h2>Story</h2>
+				<p>Story text..</p>
+			</div>
+			<div class="column" style="background-color:#bbb;">
+				<h2>Sources</h2>
+				<p>Sources text..</p>
+			</div>
+			<div class="column" style="background-color:#ccc;">
+				<h2>Contact</h2>
+				<p>Contact info</p>
+			</div>
+		</div>
+		<br><br>
+		<form action = "homepage.html">
+		    <input type = "submit" value = "Homepage"/>
+		</form>
+		<form action = "visualizations.html">
+		    <input type = "submit" value = "Visualizations"/>
+		</form>
+	</body>
+</html>
