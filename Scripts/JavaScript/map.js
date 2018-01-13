@@ -35,7 +35,10 @@ function drawMap(){
 	return;
 	});
 	
-	d3.json("/Data/data.json", function(data) {
-		console.log(data);
-	});
+	// d3.json("/Data/data.json", function(data) {
+	// 	console.log(data);
+	// 	Object.keys(data).forEach(function(key) {
+	// 	    console.log(key, data[key]["Total"]);
+	// 	});
+	// });
 }

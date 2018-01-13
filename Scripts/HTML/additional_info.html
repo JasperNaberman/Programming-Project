@@ -38,19 +38,39 @@
 		</style>
 	</head>
 	<body>
-
 		<p><b><h1>Additional Information</h1></b></p>
-
+		<form action = "homepage.html">
+		    <input type = "submit" value = "Homepage"/>
+		</form>
+		<form action = "visualizations.html">
+		    <input type = "submit" value = "Visualizations"/>
+		</form>
 		<div class = "row">
-			<div class = "column" style="background-color:#aaa;">
+			<div class = "column" style = "background-color:#aaa;">
 				<h2>Story</h2>
-				<p>Story text..</p>
+				<p>In the current social media environment, a lot of arguing about immigration takes place. Both left- and right-wing opinions are spat out using assumptions, sophistry and false information. Seldom is looked at the relevance of data and, perhaps even more important, the relations within it. This leads to a widespread discussion based on foul sources in both modern society and politics.<br><br>The idea for this product is to provide a solid and neutral basis for further debate using data from all around Europe to visualize the actual amount of immigration facing the continent.</p>
 			</div>
-			<div class = "column" style="background-color:#bbb;">
+			<div class = "column" style = "background-color:#bbb;">
 				<h2>Sources</h2>
-				<p>Sources text..</p>
+				<p><h4>API's and D3 Plugins</h4>
+				<ul>
+					<li><a href = "https://d3js.org">D3</a></li>
+					<li><a href = "https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js">D3 Tip Library</a></li>
+					<li>Queue</li>
+					<li><a href = "https://jquery.com">jQuery</a></li>
+					<li><a href = "https://getbootstrap.com">Bootstrap</a></li>
+					<li><a href = "https://github.com/topojson/topojson">TopoJSON</a></li>
+				</ul>
+				<h4>Data Sources</h4>
+				All used data originated from <a href = "http://ec.europa.eu/eurostat/web/main/home">Eurostat</a>, the statistical office of the European Union. The exact datasets used are:
+				<ul>
+					<li><a href = "http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=migr_imm1ctz&lang=en">Immigration by age group, sex and citizenship
+</a></li>
+					<li><a href = "http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=migr_pop1ctz&lang=en">Population on 1 January by age group, sex and citizenship</a></li>
+				</ul>
+				</p>
 			</div>
-			<div class = "column" style="background-color:#ccc;">
+			<div class = "column" style = "background-color:#ccc;">
 				<h2>Contact</h2>
 				<p>Jasper Naberman<br>
 					E-mail: jaspernaberman@live.nl<br>
@@ -58,12 +78,5 @@
 					<a href = "https://github.com/JasperNaberman/Programming-Project">Git Repository</a></p>
 			</div>
 		</div>
-		<br><br>
-		<form action = "homepage.html">
-		    <input type = "submit" value = "Homepage"/>
-		</form>
-		<form action = "visualizations.html">
-		    <input type = "submit" value = "Visualizations"/>
-		</form>
 	</body>
 </html>
