@@ -30,8 +30,8 @@ Student number: 10787224
     Belgium	| Stateless	| 6
     Belgium	| Unknown | 1108
     
-    This was organized as Belgium adding ‘Belgium’ to a dictionary, while being a dictionary itself.  
-    This way, the key-value pairs like ‘Stateless’-‘6’ could be added to the corresponding country’s dict.  
+    This was organized as adding ‘Belgium’ to a dictionary, while being a dictionary itself.  
+    This way, the key-value pairs like ‘Total’-‘146626’ could be added to the corresponding country’s dict.  
     In JSON-format, the data of Belgium looks as follows:
     
     ```
