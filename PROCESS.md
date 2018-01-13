@@ -30,9 +30,9 @@ Student number: 10787224
     Belgium	| Stateless	| 6
     Belgium	| Unknown | 1108
     
-    This was organized as Belgium adding ‘Belgium’ to a dictionary, while being a dictionary itself.  
-    This way, the key-value pairs like ‘Stateless’-‘6’ could be added to the corresponding country’s dict.  
-    In JSON-format, the data of Belgium looks as follows:
+      This was organized as Belgium adding ‘Belgium’ to a dictionary, while being a dictionary itself.  
+      This way, the key-value pairs like ‘Stateless’-‘6’ could be added to the corresponding country’s dict.  
+      In JSON-format, the data of Belgium looks as follows:
     ```json
     {
      "Belgium": {
@@ -46,9 +46,9 @@ Student number: 10787224
     }
 
     ```
-    Today I also made a skeleton/first prototype of the website. The site as it is now consists of a homepage, a visualization page, and an additional information page.  
-    The homepage contains some general info and a welcome message. The visualization page at the moment consists of a TopoJSON map of Europe.  
-    The additional information page consists of three html columns, in which a ‘Story’ about the website can be found, a list of ‘Data Sources’ and some ‘Contact’ information.
+      Today I also made a skeleton/first prototype of the website. The site as it is now consists of a homepage, a visualization page, and an additional information page.  
+      The homepage contains some general info and a welcome message. The visualization page at the moment consists of a TopoJSON map of Europe.  
+      The additional information page consists of three html columns, in which a ‘Story’ about the website can be found, a list of ‘Data Sources’ and some ‘Contact’ information.
 
 * __Day 5 (12-01)__
     * I updated the 'Additional Information page' with a small story about the problem statement and the given solution for it.  
