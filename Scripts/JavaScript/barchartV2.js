@@ -47,7 +47,7 @@ svg.call(tip);
 counter = 0
 data_total = []
 countries = []
-d3.json("/Data/data.json", function(error, data) { Object.keys(data).forEach(function(key) {
+d3.json("/Data/immigrationData.json", function(error, data) { Object.keys(data).forEach(function(key) {
 	if (data[key]["Total"] != "No Data Available") {
 		data_total[counter] = data[key]["Total"];
 		countries[counter] = key;

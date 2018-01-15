@@ -1,20 +1,4 @@
 {
- "Andorra": {
-  "EU28 countries except reporting country": "No Data Available",
-  "Non-EU28 countries nor reporting country": "No Data Available",
-  "Reporting country": "No Data Available",
-  "Stateless": "No Data Available",
-  "Total": "No Data Available",
-  "Unknown": "No Data Available"
- },
- "Armenia": {
-  "EU28 countries except reporting country": "No Data Available",
-  "Non-EU28 countries nor reporting country": "No Data Available",
-  "Reporting country": "No Data Available",
-  "Stateless": "No Data Available",
-  "Total": "No Data Available",
-  "Unknown": "No Data Available"
- },
  "Austria": {
   "EU28 countries except reporting country": 68797,
   "Non-EU28 countries nor reporting country": 86469,
@@ -23,22 +7,6 @@
   "Total": 166323,
   "Unknown": 337
  },
- "Azerbaijan": {
-  "EU28 countries except reporting country": "No Data Available",
-  "Non-EU28 countries nor reporting country": "No Data Available",
-  "Reporting country": "No Data Available",
-  "Stateless": "No Data Available",
-  "Total": "No Data Available",
-  "Unknown": "No Data Available"
- },
- "Belarus": {
-  "EU28 countries except reporting country": "No Data Available",
-  "Non-EU28 countries nor reporting country": "No Data Available",
-  "Reporting country": "No Data Available",
-  "Stateless": "No Data Available",
-  "Total": "No Data Available",
-  "Unknown": "No Data Available"
- },
  "Belgium": {
   "EU28 countries except reporting country": 6184,
   "Non-EU28 countries nor reporting country": 65808,
@@ -46,14 +14,6 @@
   "Stateless": 6,
   "Total": 146626,
   "Unknown": 1108
- },
- "Bosnia and Herzegovina": {
-  "EU28 countries except reporting country": "No Data Available",
-  "Non-EU28 countries nor reporting country": "No Data Available",
-  "Reporting country": "No Data Available",
-  "Stateless": "No Data Available",
-  "Total": "No Data Available",
-  "Unknown": "No Data Available"
  },
  "Bulgaria": {
   "EU28 countries except reporting country": 1435,
@@ -167,14 +127,6 @@
   "Total": 280078,
   "Unknown": 0
  },
- "Kyrgyzstan": {
-  "EU28 countries except reporting country": "No Data Available",
-  "Non-EU28 countries nor reporting country": "No Data Available",
-  "Reporting country": "No Data Available",
-  "Stateless": "No Data Available",
-  "Total": "No Data Available",
-  "Unknown": "No Data Available"
- },
  "Latvia": {
   "EU28 countries except reporting country": 661,
   "Non-EU28 countries nor reporting country": 3795,
@@ -207,14 +159,6 @@
   "Total": 23803,
   "Unknown": 50
  },
- "Macedonia": {
-  "EU28 countries except reporting country": "No Data Available",
-  "Non-EU28 countries nor reporting country": "No Data Available",
-  "Reporting country": "No Data Available",
-  "Stateless": "No Data Available",
-  "Total": "No Data Available",
-  "Unknown": "No Data Available"
- },
  "Malta": {
   "EU28 countries except reporting country": 5552,
   "Non-EU28 countries nor reporting country": 5641,
@@ -222,14 +166,6 @@
   "Stateless": 0,
   "Total": 12831,
   "Unknown": 0
- },
- "Moldova": {
-  "EU28 countries except reporting country": "No Data Available",
-  "Non-EU28 countries nor reporting country": "No Data Available",
-  "Reporting country": "No Data Available",
-  "Stateless": "No Data Available",
-  "Total": "No Data Available",
-  "Unknown": "No Data Available"
  },
  "Netherlands": {
   "EU28 countries except reporting country": 6007,
@@ -271,22 +207,6 @@
   "Total": 132795,
   "Unknown": 63
  },
- "Russia": {
-  "EU28 countries except reporting country": "No Data Available",
-  "Non-EU28 countries nor reporting country": "No Data Available",
-  "Reporting country": "No Data Available",
-  "Stateless": "No Data Available",
-  "Total": "No Data Available",
-  "Unknown": "No Data Available"
- },
- "San Marino": {
-  "EU28 countries except reporting country": "No Data Available",
-  "Non-EU28 countries nor reporting country": "No Data Available",
-  "Reporting country": "No Data Available",
-  "Stateless": "No Data Available",
-  "Total": "No Data Available",
-  "Unknown": "No Data Available"
- },
  "Slovakia": {
   "EU28 countries except reporting country": 3109,
   "Non-EU28 countries nor reporting country": 665,
@@ -327,22 +247,6 @@
   "Total": 153627,
   "Unknown": 68
  },
- "Tajikistan": {
-  "EU28 countries except reporting country": "No Data Available",
-  "Non-EU28 countries nor reporting country": "No Data Available",
-  "Reporting country": "No Data Available",
-  "Stateless": "No Data Available",
-  "Total": "No Data Available",
-  "Unknown": "No Data Available"
- },
- "Turkey": {
-  "EU28 countries except reporting country": "No Data Available",
-  "Non-EU28 countries nor reporting country": "No Data Available",
-  "Reporting country": "No Data Available",
-  "Stateless": "No Data Available",
-  "Total": "No Data Available",
-  "Unknown": "No Data Available"
- },
  "United Kingdom": {
   "EU28 countries except reporting country": 269241,
   "Non-EU28 countries nor reporting country": 278587,
@@ -350,13 +254,5 @@
   "Stateless": 0,
   "Total": 631452,
   "Unknown": 0
- },
- "Uzbekistan": {
-  "EU28 countries except reporting country": "No Data Available",
-  "Non-EU28 countries nor reporting country": "No Data Available",
-  "Reporting country": "No Data Available",
-  "Stateless": "No Data Available",
-  "Total": "No Data Available",
-  "Unknown": "No Data Available"
  }
 }

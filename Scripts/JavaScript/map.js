@@ -35,10 +35,14 @@ function drawMap(){
 	return;
 	});
 	
-	// d3.json("/Data/data.json", function(data) {
+	// d3.json("/Data/immigrationData.json", function(data) {
 	// 	console.log(data);
 	// 	Object.keys(data).forEach(function(key) {
 	// 	    console.log(key, data[key]["Total"]);
 	// 	});
+	// });
+	//
+	// d3.json("/Data/populationData.json", function(data) {
+	// 	console.log(data)
 	// });
 }
