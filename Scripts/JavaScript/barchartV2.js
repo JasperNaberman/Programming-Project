@@ -8,9 +8,8 @@
 */
 
 // set the dimensions of the canvas
-margin = {top: 80, right: 20, bottom: 70, left: 70}, width = 1000 - margin.left - margin.right,
+margin = {top: 80, right: 20, bottom: 70, left: 70}, width = 1200 - margin.left - margin.right,
 	height = 600 - margin.top - margin.bottom;
-
 
 // set the ranges
 x = d3.scale.ordinal().rangeRoundBands([0, width], 0.1);
@@ -39,28 +38,26 @@ svg = d3.select("body").append("svg")
 tip = d3.tip()
 	.attr('class', 'd3-tip')
 	.offset([-10, 0])
-	.html(function(d) {
-		return "<span style = 'color: salmon'>" + d.value + "</span>";
+	.html(function(d) { return "<span style = 'color: salmon'>" + d.value.toLocaleString() + "</span>";
 })
 
 svg.call(tip);
-	
 
 // load the data
 counter = 0
 data_total = []
 countries = []
-d3.json("/Data/data.json", function(data) { Object.keys(data).forEach(function(key) {
+d3.json("/Data/data.json", function(error, data) { Object.keys(data).forEach(function(key) {
 	if (data[key]["Total"] != "No Data Available") {
 		data_total[counter] = data[key]["Total"];
 		countries[counter] = key;
 		counter++
 	}
-
 });
+
 	bar_data = []
 	for (i = 0; i < data_total.length; i++){
-		bar_data.push({"id":countries[i], "value":data_total[i]})
+		bar_data.push({"id" : countries[i], "value" : data_total[i]})
 	}
 	
 	svg.append("text")
@@ -70,20 +67,10 @@ d3.json("/Data/data.json", function(data) { Object.keys(data).forEach(function(k
 		.style("font-size", "20px")
 		.style("font-family", "sans-serif")
 		.text("The amount of immigrants that has entered a country in 2015");
-	
-	domainY = d3.max(data_total)
-		
-	domainY = 0
-	if (Math.ceil(d3.max(bar_data, function(d) { return d.maxTemp; })) % 200000 == 0){
-		domainY = Math.ceil(d3.max(bar_data, function(d) { return d.value; }))
-	}
-	else {
-		domainY = Math.ceil(d3.max(bar_data, function(d) { return d.value; })) // + 100000
-	}
 
 	// scale chart
-	x.domain(countries);
-	y.domain([0, domainY]);
+	x.domain(bar_data.map(function(d) { return d.id; }));
+	y.domain([0, (Math.floor(d3.max(data_total) / 200000) + 1) * 200000]);
 	
 	// initialize x-axis
 	svg.append("g")
@@ -92,7 +79,7 @@ d3.json("/Data/data.json", function(data) { Object.keys(data).forEach(function(k
 		.call(axisX)
 		// append x-axis tick labels
 		.selectAll("text")
-        .style("font-size", "10px")
+		.style("font-size", "10px")
 		.style("font-family", "sans-serif")
 		.attr("dx", "-.8em")
 		.attr("dy", "-.180em")
@@ -107,7 +94,7 @@ d3.json("/Data/data.json", function(data) { Object.keys(data).forEach(function(k
 		.style("font-family", "sans-serif")
 	    .text("Countries");
 		
-	// initialize-y axis
+	// initialize y-axis
 	svg.append("g")
 		.attr("class", "y axis")
 		.call(axisY)
@@ -132,8 +119,38 @@ d3.json("/Data/data.json", function(data) { Object.keys(data).forEach(function(k
 		.attr("height", function(d) { return height - y(d.value); })
 		.on('mouseover', tip.show)
 		.on('mouseout', tip.hide)
+	
+	// call 'sort'-function when change in sorting checkbox 
+    d3.select("#sortingCheckbox").on("change", sortBarchart);
+	
+	// sort or unsort the barchart
+    function sortBarchart() {
+    	var x0 = x.domain(bar_data.sort(this.checked
+        	? function(a, b) { return b.value - a.value; }
+        	: function(a, b) { return d3.ascending(a.id, b.id); })
+        	.map(function(d) { return d.id; }))
+        	.copy();
+
+    	svg.selectAll(".bar")
+        	.sort(function(a, b) { return x0(a.id) - x0(b.id); });
+
+    	var transition = svg.transition().duration(1500),
+        delay = function(d, i) { return i * 50; };
+
+    	transition.selectAll(".bar")
+        	.delay(delay)
+        	.attr("x", function(d) { return x0(d.id); });
+
+    	transition.select(".x.axis")
+			.call(axisX)
+			.selectAll("text")
+			.style("font-size", "10px")
+			.style("font-family", "sans-serif")
+			.attr("dx", "-.8em")
+			.attr("dy", "-.180em")
+			.style("text-anchor", "end")
+			.attr("transform", "rotate(-55)")
+			.selectAll("g")
+			.delay(delay);
+	}
 });
-
-
-
-

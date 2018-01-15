@@ -7,6 +7,15 @@
 * A css-script for the barchart assignment
 */
 
+label {
+	font: 12px sans-serif;
+}
+
+
+.x.axis path {
+  display: none;
+}
+
 .bar{
   fill: tomato;
   opacity: 0.9;
@@ -54,4 +63,10 @@
   margin: -1px 0 0 0;
   top: 100%;
   left: 0;
+}
+
+label {
+  position: absolute;
+  top: 170px;
+  right: 1120px;
 }
