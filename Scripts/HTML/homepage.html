@@ -13,17 +13,78 @@
 
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+		body, html {
+		    height: 100%;
+		    margin: 0;
+		}
+
+		.hero-image {
+		  background-image: url("/doc/homepage_pic.jpg");
+		  height: 90.1%;
+		  background-position: center;
+		  background-repeat: no-repeat;
+		  background-size: cover;
+		  position: relative;
+		}
+
+		.hero-text {
+		  text-align: center;
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		  color: white;
+		}
+
+		.row-height {
+		    height: 110px;
+		    text-align: center;
+			padding-top: 27px;
+		}
+
+		.col-lg-6 {
+		    background-color: #525252;
+			color: #fff;
+		}
+		</style>
+	    <title>Immigration in Europe</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<p><b><h1>Homepage</h1></b></p>
-		<form action = "visualizations.html">
-		    <input type = "submit" value = "Visualizations"/>
-		</form>
-		<form action = "additional_info.html">
-		    <input type = "submit" value = "Additional Information"/>
-		</form>
-		<p><small>Jasper Naberman<br>10787224<br>University of Amsterdam<br>Minor Programming
-			<br>Programming Project</small></p>
-		<p><br>Welcome to my programming project!<br>This website will give you an insight in the immigration streams in Europe through interactive visualizations.<br>More information can be found on the 'Additional Information'-page.</p>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand">Immigration in Europe</a>
+				</div>
+				<ul class="nav navbar-nav">
+					<li class="active"><a>Home</a></li>
+					<li><a href="visualizations.html">Visualizations</a></li>
+					<li><a href="additional_info.html">Additional Information</a></li>
+				</ul>
+			</div>
+		</nav>			
+		<div class="hero-image">
+			<div class="hero-text">
+				<h1 style="font-size:60px"><br><br>Immigration in Europe.<br>A visualization.</h1>
+			</div>
+		</div>
+		<footer>
+			<div class="well">Jasper Naberman<br>10787224<br>University of Amsterdam<br>Minor Programming
+					<br>Programming Project
+			</div>
+			<div class="row">
+			    <div class="col-lg-6 row-height">
+			        Jasper Naberman<br>10787224
+			    </div>
+			    <div class="col-lg-6 row-height">
+					University of Amsterdam<br>Minor Programming<br>Programming Project
+			    </div>
+			</div>
+		</footer>
 	</body>
 </html>

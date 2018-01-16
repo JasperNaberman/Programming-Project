@@ -15,6 +15,11 @@
 
 <html>
 	<head>
+	    <title>Immigration in Europe</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src = "http://d3js.org/d3.v3.min.js"></script>
 		<script src = "https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 		<script src = "http://d3js.org/d3.geo.projection.v0.min.js"></script>
@@ -22,13 +27,21 @@
 		<link rel = "stylesheet" type = "text/css" href = "/Scripts/CSS/barchart.css">
 	</head>
 	<body>
-		<p><b><h1>Visualizations</h1></b></p>
-		<form action = "Homepage.html">
-		    <input type = "submit" value = "Homepage"/>
-		</form>
-		<form action = "additional_info.html">
-		    <input type = "submit" value = "Additional Information"/>
-		</form>
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="homepage.html">Immigration in Europe</a>
+		    </div>
+		    <ul class="nav navbar-nav">
+  		      <li><a href="homepage.html">Home</a></li>
+			  <li class="active"><a>Visualizations</a></li>
+		      <li><a href="additional_info.html">Additional Information</a></li>
+		    </ul>
+		  </div>
+		</nav>
+		<div class="container">
+			<h1>Visualizations</h1>
+		</div>
 		<label><input type = "checkbox" id = "sortingCheckbox"> Sort bars</label>
 		<script src = "/Scripts/JavaScript/map.js"></script>
 		<script src = "/Scripts/JavaScript/barchartV2.js"></script>
