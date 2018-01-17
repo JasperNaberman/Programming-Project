@@ -84,4 +84,11 @@ Next, I placed all the headers of the different pages in containers, so they wil
 All the pages are given a title in the html header, that will be displayed in the browser's tab of the site.
 The 'Additional Information' page, which previously existed of three html columns, now holds three Bootstrap 'wells'. All with separate headers and highlightings.
 The homepage, which held a small welcome message, now consists of a picture of an immigrant family, as background of the title of the website in big white letters. It also holds a footer, with two columns, with some very general information, like my name, and the course of this assignment. The picture below is a screenshot of the homepage. The footer is not visible in the picture, since it is only visible after scrolling down.  
-![](doc/homepage_(16-01).png)
+![](doc/homepage_(16-01).png)  
+
+# Day 8 (17-01)
+I replaced the footer of the bottom of the homepage html with a bootstrap jumbotron, for aesthetic purposes. Some of the text in the jumbotron are links. I spend a lot of time trying to figure out which kind of map-visualization to use: DataMaps or TopoJSON. Most people (on the internet and TA's) recommended DataMaps, so that's what I went with. I downloaded a custom json file from TopoJSON, since DataMaps doesn't provide a default map for Europe only. The file is loaded in and appended to a <div> tag in the html. The 'Visualizations'-page now holds an interactive map, that shows a country's name and highlights the country. It has yet to be color coded. The map now stands on top of the page, with the barchart below it.  
+I added a target to all the html links, so that they open in a new browser tab, instead of leaving the application website.  
+I added an extra html page containing the story of the site, which was previously on the additional information page. This new page consists of two jumbotrons with a picture.  
+Finally I added glyphicons for all the pages in the navigation bar, so it is more visually intuitive what kind of page it is. A screenshot of the new Story-page is added below. In this picture the glyphicons are also visible.
+![](doc/storypage_(17-01).png) 

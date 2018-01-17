@@ -52,8 +52,8 @@ d3.json("/Data/immigrationData.json", function(error, data) { Object.keys(data).
 		data_total[counter] = data[key]["Total"];
 		countries[counter] = key;
 		counter++
-	}
-});
+		}
+	});
 
 	bar_data = []
 	for (i = 0; i < data_total.length; i++){
@@ -154,3 +154,51 @@ d3.json("/Data/immigrationData.json", function(error, data) { Object.keys(data).
 			.delay(delay);
 	}
 });
+
+/*
+Dataset immigration
+Dataset immigration
+Dataset immigration
+Dataset immigration
+Dataset immigration
+*/
+
+// // load the data
+// immiCounter = 0
+// immiData_total = []
+// immiCountries = []
+//
+// d3.json("/Data/immigrationData.json", function(error, data) { Object.keys(data).forEach(function(key) {
+// 	if (data[key]["Total"] != "No Data Available") {
+// 		immiData_total[immiCounter] = data[key]["Total"];
+// 		immiCountries[immiCounter] = key;
+// 		immiCounter++
+// 		}
+// 	});
+// });
+// console.log(immiCountries, immiData_total)
+//
+// /*
+// Dataset population
+// Dataset population
+// Dataset population
+// Dataset population
+// Dataset population
+// */
+//
+// // load the data
+// popuCounter = 0
+// popuData_total = []
+// popuCountries = []
+//
+// d3.json("/Data/populationData.json", function(error, data) { Object.keys(data).forEach(function(key) {
+// 	if (data[key][""])
+// })
+// });
+//
+// console.log(data[0]["country"])
+//
+//
+
+
+
