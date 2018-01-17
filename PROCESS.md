@@ -91,5 +91,5 @@ I replaced the footer of the bottom of the homepage html with a bootstrap jumbot
 I added a target to all the html links, so that they open in a new browser tab, instead of leaving the application website.  
 I added an extra html page containing the story of the site, which was previously on the additional information page. This new page consists of two jumbotrons with a picture.  
 Finally I added glyphicons for all the pages in the navigation bar, so it is more visually intuitive what kind of page it is. A screenshot of the new Story-page is added below. In this picture the glyphicons are also visible.  
-![](doc/storypage_(17-01).png)  
+![](Doc/storypage_(17-01).png)  
   
