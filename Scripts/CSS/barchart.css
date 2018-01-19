@@ -49,9 +49,9 @@ label {
 .d3-tip:after {
   box-sizing: border-box;
   display: inline;
-  font-size: 10px;
+  font-size: 13.5px;
   width: 100%;
-  line-height: 1.2;
+  line-height: .8;
   color: rgba(0, 0, 0, 0.8);
   content: "\25BC";
   position: absolute;
@@ -65,8 +65,14 @@ label {
   left: 0;
 }
 
-label {
+/*label {
   position: absolute;
-  top: 590px;
-  right: 1120px;
+  top: 600px;
+  left: 100px;
+}*/
+
+.radioOrders {
+	position: absolute;
+	left: 1000;
 }
+

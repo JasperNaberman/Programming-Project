@@ -93,3 +93,10 @@ I added an extra html page containing the story of the site, which was previousl
 Finally I added glyphicons for all the pages in the navigation bar, so it is more visually intuitive what kind of page it is. A screenshot of the new Story-page is added below. In this picture the glyphicons are also visible.  
 ![](Doc/storypage_(17-01).png)  
   
+# Day 9 (18-01)
+Because of the storm in The Netherlands that ripped the roof of the university building, I wasn't able to do significant amounts of work.  
+  
+# Day 10 (19-01)
+Today I worked on the population dataset. At this moment I have organized it as a dict, where the country is the key, and the amount of people living in the country is the value.  
+I also replaced the checkbox for sorting the barchart to 2 radio buttons, since it is sorted alphabetically or reverse sorted numerical.  
+Finally I replaced the picture of the homepage and the pictures on the storypage with other pictures, because of possible copyright issues.

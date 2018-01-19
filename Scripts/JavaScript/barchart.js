@@ -30,10 +30,14 @@ axisY = d3.svg.axis()
 
 // add the SVG element
 svg = d3.select("body").append("svg")
+	.attr("id", "svgBarchart")
 	.attr("width", width + margin.left + margin.right)
 	.attr("height", height + margin.top + margin.bottom)
 	.append("g")
 	.attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+	
+// svg repositioning
+$("#svgBarchart").css({top: 550, position:'absolute'});
 	
 tip = d3.tip()
 	.attr('class', 'd3-tip')
@@ -120,8 +124,12 @@ d3.json("/Data/immigrationData.json", function(error, data) { Object.keys(data).
 		.on('mouseover', tip.show)
 		.on('mouseout', tip.hide)
 	
-	// call 'sort'-function when change in sorting checkbox 
-    d3.select("#sortingCheckbox").on("change", sortBarchart);
+	// call 'sort'-function when change in sorting checkbox
+	d3.select("#sortingCheckbox").on("change", sortBarchart);
+	// d3.select("#sortingRadio1").on("change", sortBarchart);
+	// d3.select("#sortingRadio2").on("change", sortBarchart);
+	//
+	// $("input[name=optradio]:radio").change(sortBarchart)
 	
 	// sort or unsort the barchart
     function sortBarchart() {
@@ -163,42 +171,59 @@ Dataset immigration
 Dataset immigration
 */
 
-// // load the data
-// immiCounter = 0
-// immiData_total = []
-// immiCountries = []
-//
-// d3.json("/Data/immigrationData.json", function(error, data) { Object.keys(data).forEach(function(key) {
-// 	if (data[key]["Total"] != "No Data Available") {
-// 		immiData_total[immiCounter] = data[key]["Total"];
-// 		immiCountries[immiCounter] = key;
-// 		immiCounter++
-// 		}
-// 	});
-// });
-// console.log(immiCountries, immiData_total)
-//
-// /*
-// Dataset population
-// Dataset population
-// Dataset population
-// Dataset population
-// Dataset population
-// */
-//
-// // load the data
-// popuCounter = 0
-// popuData_total = []
-// popuCountries = []
-//
-// d3.json("/Data/populationData.json", function(error, data) { Object.keys(data).forEach(function(key) {
-// 	if (data[key][""])
-// })
-// });
-//
-// console.log(data[0]["country"])
-//
-//
+// load the data
+immiCounter = 0
+immiData_total = []
+immiCountries = []
 
+d3.json("/Data/immigrationData.json", function(error, data) { Object.keys(data).forEach(function(key) {
+	if (data[key]["Total"] != "No Data Available") {
+		immiData_total[immiCounter] = data[key]["Total"];
+		immiCountries[immiCounter] = key;
+		immiCounter++
+	}
+	});
+	
+	immiBar_data = []
+	for (i = 0; i < immiData_total.length; i++){
+		immiBar_data.push({"id" : immiCountries[i], "value" : immiData_total[i]})
+	}
 
+	// Object.keys(immiBar_data).forEach(function(key) {
+	// 	console.log(immiBar_data[key]["id"], immiBar_data[key]["value"])
+	// })
+});
 
+/*
+Dataset population
+Dataset population
+Dataset population
+Dataset population
+Dataset population
+*/
+
+// load the data
+popuCounter = 0
+popuData_total = []
+popuCountries = []
+
+d3.json("/Data/populationData.json", function(error, data) { Object.keys(data).forEach(function(key) {
+	if (data[key]["value"] != "No Data Available") {
+		popuData_total[popuCounter] = data[key]["value"];
+		popuCountries[popuCounter] = data[popuCounter]["country"]
+		popuCounter++
+	}
+	});
+	console.log(popuCountries)
+	popuSort = popuCountries.sort()
+	console.log(popuSort)
+	
+	popuBar_data = []
+	for (i = 0; i < popuData_total.length; i++){
+		popuBar_data.push({"id" : popuCountries[i], "value" : popuData_total[i]})
+	}
+	
+	// Object.keys(popuBar_data).forEach(function(key) {
+	// 	console.log(popuBar_data[key]["id"], popuBar_data[key]["value"])
+	// })
+});
