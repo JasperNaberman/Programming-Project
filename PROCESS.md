@@ -99,4 +99,20 @@ Because of the storm in The Netherlands that ripped the roof of the university b
 # Day 10 (19-01)
 Today I worked on the population dataset. At this moment I have organized it as a dict, where the country is the key, and the amount of people living in the country is the value.  
 I also replaced the checkbox for sorting the barchart to 2 radio buttons, since it is sorted alphabetically or reverse sorted numerical.  
-Finally I replaced the picture of the homepage and the pictures on the storypage with other pictures, because of possible copyright issues.
+Finally I replaced the picture of the homepage and the pictures on the storypage with other pictures, because of possible copyright issues.  
+  
+# Day 11 (22-01)  
+Today I changed the TopoJSON structure from having 2 letter country codes to three letter country codes, to make it compatible with Datamaps-commands. I also created an new data file for the map, which contains a country's name, country code, population size and immigration stream. The JSON of this file for one country looks as follows:  
+  
+```
+{
+ "Austria": {
+  "population": 8576261,
+  "immigrants": 166323,
+  "code": "AUT"
+ }
+}
+```  
+With this I could compute how many immigrants came into a country per 1000 original citizens. I did this by computing a quotient: the country's population divided by a thousand. Then I divided the amount of immigrants by the quotient to come up with the amount of immigrants per 1000 capita.  
+With this information per country, I color coded the Datamaps map of Europe. A darker shade meaning a higher amount of immigrants per 1000 capita. Since Luxembourg was an outlier in the data that resulted in not seeing differences between other countries very well, I used a logarithmic function instead of a linear one for the color coding.  
+  

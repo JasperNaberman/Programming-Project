@@ -1,0 +1,162 @@
+{
+ "Austria": {
+  "population": 8576261,
+  "immigrants": 166323,
+  "code": "AUT"
+ },
+ "Belgium": {
+  "population": 11237274,
+  "immigrants": 146626,
+  "code": "BEL"
+ },
+ "Bulgaria": {
+  "population": 7202198,
+  "immigrants": 25223,
+  "code": "BGR"
+ },
+ "Croatia": {
+  "population": 4225316,
+  "immigrants": 11706,
+  "code": "HRV"
+ },
+ "Cyprus": {
+  "population": 847008,
+  "immigrants": 15183,
+  "code": "CYP"
+ },
+ "Czech Republic": {
+  "population": 10538275,
+  "immigrants": 29602,
+  "code": "CZE"
+ },
+ "Denmark": {
+  "population": 5659715,
+  "immigrants": 78492,
+  "code": "DNK"
+ },
+ "Estonia": {
+  "population": 1314870,
+  "immigrants": 15413,
+  "code": "EST"
+ },
+ "Finland": {
+  "population": 5471753,
+  "immigrants": 28746,
+  "code": "FIN"
+ },
+ "France": {
+  "population": 66488186,
+  "immigrants": 363869,
+  "code": "FRA"
+ },
+ "Germany": {
+  "population": 81197537,
+  "immigrants": 1543848,
+  "code": "DEU"
+ },
+ "Greece": {
+  "population": 10858018,
+  "immigrants": 64446,
+  "code": "GRC"
+ },
+ "Hungary": {
+  "population": 9855571,
+  "immigrants": 58344,
+  "code": "HUN"
+ },
+ "Iceland": {
+  "population": 329100,
+  "immigrants": 5635,
+  "code": "ISL"
+ },
+ "Ireland": {
+  "population": 4628949,
+  "immigrants": 76888,
+  "code": "IRL"
+ },
+ "Italy": {
+  "population": 60795612,
+  "immigrants": 280078,
+  "code": "ITA"
+ },
+ "Latvia": {
+  "population": 1986096,
+  "immigrants": 9479,
+  "code": "LVA"
+ },
+ "Liechtenstein": {
+  "population": 37366,
+  "immigrants": 657,
+  "code": "LIE"
+ },
+ "Lithuania": {
+  "population": 2921262,
+  "immigrants": 2213,
+  "code": "LTU"
+ },
+ "Luxembourg": {
+  "population": 562958,
+  "immigrants": 23803,
+  "code": "LUX"
+ },
+ "Malta": {
+  "population": 429344,
+  "immigrants": 12831,
+  "code": "MLT"
+ },
+ "Netherlands": {
+  "population": 16900726,
+  "immigrants": 166872,
+  "code": "NLD"
+ },
+ "Norway": {
+  "population": 5166493,
+  "immigrants": 60816,
+  "code": "NOR"
+ },
+ "Poland": {
+  "population": 38005614,
+  "immigrants": 218147,
+  "code": "POL"
+ },
+ "Portugal": {
+  "population": 10374822,
+  "immigrants": 29896,
+  "code": "PRT"
+ },
+ "Romania": {
+  "population": 19870647,
+  "immigrants": 132795,
+  "code": "ROU"
+ },
+ "Slovakia": {
+  "population": 5421349,
+  "immigrants": 6997,
+  "code": "SVK"
+ },
+ "Slovenia": {
+  "population": 2062874,
+  "immigrants": 1542,
+  "code": "SVN"
+ },
+ "Spain": {
+  "population": 46449565,
+  "immigrants": 342114,
+  "code": "ESP"
+ },
+ "Sweden": {
+  "population": 9747355,
+  "immigrants": 13424,
+  "code": "SWE"
+ },
+ "Switzerland": {
+  "population": 8237666,
+  "immigrants": 153627,
+  "code": "CHE"
+ },
+ "United Kingdom": {
+  "population": 64875165,
+  "immigrants": 631452,
+  "code": "GBR"
+ }
+}

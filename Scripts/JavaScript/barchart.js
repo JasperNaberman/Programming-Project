@@ -1,4 +1,4 @@
-/* barchartV2.js
+/* barchart.js
 *
 * Jasper Naberman
 * 10787224
@@ -42,26 +42,28 @@ $("#svgBarchart").css({top: 550, position:'absolute'});
 tip = d3.tip()
 	.attr('class', 'd3-tip')
 	.offset([-10, 0])
-	.html(function(d) { return "<span style = 'color: salmon'>" + d.value.toLocaleString() + "</span>";
+	.html(function(d) { return "<span style = 'color: #ca85ff'>" + d.value.toLocaleString() + "</span>";
 })
 
 svg.call(tip);
 
 // load the data
-counter = 0
-data_total = []
-countries = []
+bc_counter = 0
+bc_data_total = []
+bc_countries = []
 d3.json("/Data/immigrationData.json", function(error, data) { Object.keys(data).forEach(function(key) {
+	if (error) throw error;
+	
 	if (data[key]["Total"] != "No Data Available") {
-		data_total[counter] = data[key]["Total"];
-		countries[counter] = key;
-		counter++
+		bc_data_total[bc_counter] = data[key]["Total"];
+		bc_countries[bc_counter] = key;
+		bc_counter++
 		}
 	});
 
-	bar_data = []
-	for (i = 0; i < data_total.length; i++){
-		bar_data.push({"id" : countries[i], "value" : data_total[i]})
+	bc_data = []
+	for (i = 0; i < bc_data_total.length; i++){
+		bc_data.push({"id" : bc_countries[i], "value" : bc_data_total[i]})
 	}
 	
 	svg.append("text")
@@ -73,8 +75,8 @@ d3.json("/Data/immigrationData.json", function(error, data) { Object.keys(data).
 		.text("The amount of immigrants that has entered a country in 2015");
 
 	// scale chart
-	x.domain(bar_data.map(function(d) { return d.id; }));
-	y.domain([0, (Math.floor(d3.max(data_total) / 200000) + 1) * 200000]);
+	x.domain(bc_data.map(function(d) { return d.id; }));
+	y.domain([0, (Math.floor(d3.max(bc_data_total) / 200000) + 1) * 200000]);
 	
 	// initialize x-axis
 	svg.append("g")
@@ -114,7 +116,7 @@ d3.json("/Data/immigrationData.json", function(error, data) { Object.keys(data).
 		
 	// add bars to chart
 	svg.selectAll("bar")
-		.data(bar_data)
+		.data(bc_data)
 		.enter().append("rect")
 		.attr("class", "bar")
 		.attr("x", function(d) { return x(d.id); })
@@ -126,14 +128,13 @@ d3.json("/Data/immigrationData.json", function(error, data) { Object.keys(data).
 	
 	// call 'sort'-function when change in sorting checkbox
 	d3.select("#sortingCheckbox").on("change", sortBarchart);
+	
 	// d3.select("#sortingRadio1").on("change", sortBarchart);
 	// d3.select("#sortingRadio2").on("change", sortBarchart);
-	//
-	// $("input[name=optradio]:radio").change(sortBarchart)
 	
 	// sort or unsort the barchart
     function sortBarchart() {
-    	var x0 = x.domain(bar_data.sort(this.checked
+    	var x0 = x.domain(bc_data.sort(this.checked
         	? function(a, b) { return b.value - a.value; }
         	: function(a, b) { return d3.ascending(a.id, b.id); })
         	.map(function(d) { return d.id; }))
@@ -161,69 +162,4 @@ d3.json("/Data/immigrationData.json", function(error, data) { Object.keys(data).
 			.selectAll("g")
 			.delay(delay);
 	}
-});
-
-/*
-Dataset immigration
-Dataset immigration
-Dataset immigration
-Dataset immigration
-Dataset immigration
-*/
-
-// load the data
-immiCounter = 0
-immiData_total = []
-immiCountries = []
-
-d3.json("/Data/immigrationData.json", function(error, data) { Object.keys(data).forEach(function(key) {
-	if (data[key]["Total"] != "No Data Available") {
-		immiData_total[immiCounter] = data[key]["Total"];
-		immiCountries[immiCounter] = key;
-		immiCounter++
-	}
-	});
-	
-	immiBar_data = []
-	for (i = 0; i < immiData_total.length; i++){
-		immiBar_data.push({"id" : immiCountries[i], "value" : immiData_total[i]})
-	}
-
-	// Object.keys(immiBar_data).forEach(function(key) {
-	// 	console.log(immiBar_data[key]["id"], immiBar_data[key]["value"])
-	// })
-});
-
-/*
-Dataset population
-Dataset population
-Dataset population
-Dataset population
-Dataset population
-*/
-
-// load the data
-popuCounter = 0
-popuData_total = []
-popuCountries = []
-
-d3.json("/Data/populationData.json", function(error, data) { Object.keys(data).forEach(function(key) {
-	if (data[key]["value"] != "No Data Available") {
-		popuData_total[popuCounter] = data[key]["value"];
-		popuCountries[popuCounter] = data[popuCounter]["country"]
-		popuCounter++
-	}
-	});
-	console.log(popuCountries)
-	popuSort = popuCountries.sort()
-	console.log(popuSort)
-	
-	popuBar_data = []
-	for (i = 0; i < popuData_total.length; i++){
-		popuBar_data.push({"id" : popuCountries[i], "value" : popuData_total[i]})
-	}
-	
-	// Object.keys(popuBar_data).forEach(function(key) {
-	// 	console.log(popuBar_data[key]["id"], popuBar_data[key]["value"])
-	// })
 });

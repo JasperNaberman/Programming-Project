@@ -11,18 +11,17 @@ label {
 	font: 12px sans-serif;
 }
 
-
 .x.axis path {
   display: none;
 }
 
 .bar{
-  fill: tomato;
+  fill: #9e1fff;
   opacity: 0.9;
 }
 
 .bar:hover{
-  fill: salmon;
+  fill: #ca85ff;
 }
 
 .axis {
@@ -32,7 +31,7 @@ label {
 .axis path,
 .axis line {
   fill: none;
-  stroke: #000;
+  stroke: #000000;
   shape-rendering: crispEdges;
 }
 
@@ -41,7 +40,7 @@ label {
   line-height: 1;
   padding: 5px;
   background: rgba(0, 0, 0, 0.8);
-  color: #fff;
+  color: #48d1cc;
   border-radius: 2px;
 }
 
@@ -65,14 +64,14 @@ label {
   left: 0;
 }
 
-/*label {
+label {
   position: absolute;
   top: 600px;
   left: 100px;
-}*/
+}
 
-.radioOrders {
+/*.radioOrders {
 	position: absolute;
 	left: 1000;
-}
+}*/
 
