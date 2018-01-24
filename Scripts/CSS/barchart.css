@@ -16,12 +16,12 @@ label {
 }
 
 .bar{
-  fill: #9e1fff;
+  fill: #9f00c2;
   opacity: 0.9;
 }
 
 .bar:hover{
-  fill: #ca85ff;
+  fill: #d500fa;
 }
 
 .axis {
@@ -64,14 +64,15 @@ label {
   left: 0;
 }
 
-label {
-  position: absolute;
-  top: 600px;
-  left: 100px;
+.radioOrders {
+	position: absolute;
+	left: 1500;
 }
 
-/*.radioOrders {
-	position: absolute;
-	left: 1000;
-}*/
+.radioText{
+    vertical-align: middle;
+}
 
+input[type="radio"]{
+  vertical-align: middle;
+}

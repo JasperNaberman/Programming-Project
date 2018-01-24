@@ -16,7 +16,6 @@
 	    <title>Immigration in Europe</title>
 		<link rel="icon" href="/doc/europe_favicon.png">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="http://d3js.org/d3.v3.min.js"></script>
@@ -26,7 +25,10 @@
 		<script src="http://d3js.org/topojson.v1.min.js"></script>
 		<script src="http://rawgithub.com/markmarkoh/datamaps/master/dist/datamaps.none.min.js"></script>
 		<script src="http://datamaps.github.io/scripts/0.4.0/datamaps.world.min.js?v=1"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="/Scripts/CSS/barchart.css">
+		<link rel="stylesheet" type="text/css" href="/Scripts/CSS/map.css">
+		<link rel="stylesheet" type="text/css" href="/Scripts/CSS/sunburst.css">
 	</head>
 	<body>
 		<nav class="navbar navbar-default">
@@ -39,29 +41,41 @@
 					<li class="active"><a><span class="glyphicon glyphicon-stats"></span> Visualizations</a></li>
 					<li><a href="story.html"><span class="glyphicon glyphicon-align-justify"></span> Story</a></li>
 					<li><a href="additional_info.html"><span class="glyphicon glyphicon-info-sign"></span> Additional Information</a></li>
+					<li><a href="sunburst.html"><span class="glyphicon glyphicon-record"></span> Sunburst</a></li>
 				</ul>
 			</div>
 		</nav>
 		<div class="container">
 			<h1>Visualizations</h1>
 		</div>
-		<div id="mapEurope" style="height: 400px; width: 400px;"></div>
-		<!-- <div id="container1" style="position: relative; width: 80%; max-height: 450px;"></div> -->
-		
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div id="mapEurope" style="height: 400px; width: 400px;"></div>
+				</div>
+				<div class="col-lg-6"></div>
+			</div>
+		</div>
 		<script src="/Scripts/JavaScript/map.js"></script>
-		<script src="/Scripts/JavaScript/sunburst.js"></script>
+		<!-- <script src="/Scripts/JavaScript/sunburst.js"></script> -->
 		<script src="/Scripts/JavaScript/barchart.js"></script>
-		<label><input type="checkbox" id="sortingCheckbox"> Sort bars</label>
-		
-		<!-- <div class="container">
-		  <form>
-		    <label class="radio-inline">
-		      <input type="radio" checked="" name="optradio" id="sortingRadio1">Alphabetical Order
-		    </label>
-		    <label class="radio-inline">
-		      <input type="radio" name="optradio">Reversed Numerical Order
-		    </label>
-		  </form>
-		</div> -->
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4"></div>
+				<div class="col-lg-4">
+					<div class="container">
+						<form>
+							<label class="radio-inline">
+								<input type="radio" checked="" name="optradio" id="sortingRadio1" value="1"><label class="radioText">Alphabetical Order</label>
+							</label>
+							<label class="radio-inline">
+								<input type="radio" name="optradio" id="sortingRadio2" value="2"><label class="radioText">Reversed Numerical Order</label>
+							</label>
+						</form>
+					</div>
+				</div>
+				<div class="col-lg-4"></div>
+			</div>
+		</div>
 	</body>
 </html>

@@ -116,3 +116,6 @@ Today I changed the TopoJSON structure from having 2 letter country codes to thr
 With this I could compute how many immigrants came into a country per 1000 original citizens. I did this by computing a quotient: the country's population divided by a thousand. Then I divided the amount of immigrants by the quotient to come up with the amount of immigrants per 1000 capita.  
 With this information per country, I color coded the Datamaps map of Europe. A darker shade meaning a higher amount of immigrants per 1000 capita. Since Luxembourg was an outlier in the data that resulted in not seeing differences between other countries very well, I used a logarithmic function instead of a linear one for the color coding.  
   
+# Day 12 (23-01)  
+Today I completed the sunburst chart. At the moment it contains all the countries in the inner ring, and for every country the composition of the immigration stream. The sunburst is zoomable, so you can click on a country to take a closer look at it. At the moment the chart is at a different html page than the other visualizations, because the script gets confused with variable names and svg appends. A screenshot of the sunburst is found below.  
+![](doc/sunburst.png)  

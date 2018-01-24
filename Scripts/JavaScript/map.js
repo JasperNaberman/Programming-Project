@@ -21,6 +21,16 @@ d3.json("/Data/mapData.json", function(error, data) { Object.keys(data).forEach(
 	mapCode[mapCounter] = data[key]["code"];
 	mapCounter++
 	});
+	
+	// total = 0
+// 	for (i = 0; i < mapPopu.length; i++) {
+// 		total += mapImmi[i]
+// 	}
+// 	console.log("total: ", total)
+// 	for (i = 0; i < mapPopu.length; i++) {
+// 		relative = mapImmi[i] / total
+// 		console.log(mapCountries[i], relative * 100)
+// 	}
 
 	mapData = []
 	for (i = 0; i < mapPopu.length; i++) {
@@ -40,10 +50,10 @@ d3.json("/Data/mapData.json", function(error, data) { Object.keys(data).forEach(
 	// create color palette function
     var paletteScale = d3.scale.sqrt()
             .domain([minValue,maxValue])
-            .range(["#e9ccff", "#570099"]);
+            .range(["#fcebff", "#3f004d"]);
 
 	// fill dataset in appropriate format
-	mapData.forEach(function(item){ //
+	mapData.forEach(function(item){
 		var iso = item[0];
 		var value = item[1];
 		dataset[iso] = { immigrants: Math.round(value * 10) / 10, fillColor: paletteScale(value) };
@@ -65,16 +75,17 @@ d3.json("/Data/mapData.json", function(error, data) { Object.keys(data).forEach(
 		geographyConfig: {
 			dataUrl: '/Data/eu.topojson',
 			borderColor: '#dedede',
-			highlightBorderWidth: 2,
+			borderWidth: .5,
+			highlightBorderWidth: 1,
 			// don't change color on mouse hover
 			highlightFillColor: function(geo) {
 				return geo['fillColor'] || '#8f8f8f';
 			},
 			// only change border
-			highlightBorderColor: '#8f8f8f',
+			highlightBorderColor: '#ff0000',
 			// show desired information in tooltip
 			popupTemplate: function(geo, data) {
-				// don't show tooltip if country isn't present in dataset
+				// show different tooltip if data of country isn't present in dataset
 				if (!data) { return ['<div class="hoverinfo">',
 				'<strong>', geo.properties.name, '</strong>',
 				'<br>No Information Available.</div>'].join(''); }
@@ -84,6 +95,12 @@ d3.json("/Data/mapData.json", function(error, data) { Object.keys(data).forEach(
 				'<br>Immigrants per 1000 capita: <strong>', data.immigrants, '</strong>',
 				'</div>'].join('');
 			}
+		},
+		done: function(datamap) {
+			datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
+				alert(geography.properties.name);
+			});
 		}
 	})
+	// map.legend({legendTitle: 'Map Legend!'});
 });

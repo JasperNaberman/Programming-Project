@@ -1,0 +1,325 @@
+{
+	"name": "Europe",
+	"children": [
+		{
+			"name": "Austria",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 68797},
+				{"name": "Non-EU28 countries nor reporting country", "size": 86469},
+				{"name": "Reporting country", "size": 9443},
+				{"name": "Stateless", "size": 1277},
+				{"name": "Unknown", "size": 337}
+			]
+		},
+		{
+			"name": "Belgium",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 6184},
+				{"name": "Non-EU28 countries nor reporting country", "size": 65808},
+				{"name": "Reporting country", "size": 17864},
+				{"name": "Stateless", "size": 6},
+				{"name": "Unknown", "size": 1108}
+			]
+		},
+		{
+			"name": "Bulgaria",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 1435},
+				{"name": "Non-EU28 countries nor reporting country", "size": 1285},
+				{"name": "Reporting country", "size": 10722},
+				{"name": "Stateless", "size": 109},
+				{"name": "Unknown", "size": 107}
+			]
+		},
+		{
+			"name": "Croatia",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 2192},
+				{"name": "Non-EU28 countries nor reporting country", "size": 3024},
+				{"name": "Reporting country", "size": 6483},
+				{"name": "Stateless", "size": 3},
+				{"name": "Unknown", "size": 4}
+			]
+		},
+		{
+			"name": "Cyprus",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 6104},
+				{"name": "Non-EU28 countries nor reporting country", "size": 5922},
+				{"name": "Reporting country", "size": 3157},
+				{"name": "Stateless", "size": 0},
+				{"name": "Unknown", "size": 0}
+			]
+		},
+		{
+			"name": "Czech Republic",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 14505},
+				{"name": "Non-EU28 countries nor reporting country", "size": 10619},
+				{"name": "Reporting country", "size": 4478},
+				{"name": "Stateless", "size": 0},
+				{"name": "Unknown", "size": 0}
+			]
+		},
+		{
+			"name": "Denmark",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 24926},
+				{"name": "Non-EU28 countries nor reporting country", "size": 32256},
+				{"name": "Reporting country", "size": 19797},
+				{"name": "Stateless", "size": 1506},
+				{"name": "Unknown", "size": 7}
+			]
+		},
+		{
+			"name": "Estonia",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 3188},
+				{"name": "Non-EU28 countries nor reporting country", "size": 3656},
+				{"name": "Reporting country", "size": 8043},
+				{"name": "Stateless", "size": 523},
+				{"name": "Unknown", "size": 3}
+			]
+		},
+		{
+			"name": "Finland",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 7624},
+				{"name": "Non-EU28 countries nor reporting country", "size": 13108},
+				{"name": "Reporting country", "size": 7332},
+				{"name": "Stateless", "size": 65},
+				{"name": "Unknown", "size": 617}
+			]
+		},
+		{
+			"name": "France",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 84225},
+				{"name": "Non-EU28 countries nor reporting country", "size": 148484},
+				{"name": "Reporting country", "size": 13116},
+				{"name": "Stateless", "size": 0},
+				{"name": "Unknown", "size": 0}
+			]
+		},
+		{
+			"name": "Germany",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 460082},
+				{"name": "Non-EU28 countries nor reporting country", "size": 967539},
+				{"name": "Reporting country", "size": 87372},
+				{"name": "Stateless", "size": 5344},
+				{"name": "Unknown", "size": 23511}
+			]
+		},
+		{
+			"name": "Greece",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 16494},
+				{"name": "Non-EU28 countries nor reporting country", "size": 17492},
+				{"name": "Reporting country", "size": 3046},
+				{"name": "Stateless", "size": 0},
+				{"name": "Unknown", "size": 0}
+			]
+		},
+		{
+			"name": "Hungary",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 10549},
+				{"name": "Non-EU28 countries nor reporting country", "size": 15221},
+				{"name": "Reporting country", "size": 32557},
+				{"name": "Stateless", "size": 8},
+				{"name": "Unknown", "size": 9}
+			]
+		},
+		{
+			"name": "Iceland",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 3097},
+				{"name": "Non-EU28 countries nor reporting country", "size": 742},
+				{"name": "Reporting country", "size": 1779},
+				{"name": "Stateless", "size": 17},
+				{"name": "Unknown", "size": 0}
+			]
+		},
+		{
+			"name": "Ireland",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 26383},
+				{"name": "Non-EU28 countries nor reporting country", "size": 3173},
+				{"name": "Reporting country", "size": 18775},
+				{"name": "Stateless", "size": 0},
+				{"name": "Unknown", "size": 0}
+			]
+		},
+		{
+			"name": "Italy",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 63492},
+				{"name": "Non-EU28 countries nor reporting country", "size": 186522},
+				{"name": "Reporting country", "size": 30052},
+				{"name": "Stateless", "size": 12},
+				{"name": "Unknown", "size": 0}
+			]
+		},
+		{
+			"name": "Latvia",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 661},
+				{"name": "Non-EU28 countries nor reporting country", "size": 3795},
+				{"name": "Reporting country", "size": 4974},
+				{"name": "Stateless", "size": 13},
+				{"name": "Unknown", "size": 36}
+			]
+		},
+		{
+			"name": "Liechtenstein",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 271},
+				{"name": "Non-EU28 countries nor reporting country", "size": 223},
+				{"name": "Reporting country", "size": 163},
+				{"name": "Stateless", "size": 0},
+				{"name": "Unknown", "size": 0}
+			]
+		},
+		{
+			"name": "Lithuania",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 813},
+				{"name": "Non-EU28 countries nor reporting country", "size": 2919},
+				{"name": "Reporting country", "size": 18383},
+				{"name": "Stateless", "size": 15},
+				{"name": "Unknown", "size": 0}
+			]
+		},
+		{
+			"name": "Luxembourg",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 16419},
+				{"name": "Non-EU28 countries nor reporting country", "size": 6132},
+				{"name": "Reporting country", "size": 1195},
+				{"name": "Stateless", "size": 7},
+				{"name": "Unknown", "size": 50}
+			]
+		},
+		{
+			"name": "Malta",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 5552},
+				{"name": "Non-EU28 countries nor reporting country", "size": 5641},
+				{"name": "Reporting country", "size": 1638},
+				{"name": "Stateless", "size": 0},
+				{"name": "Unknown", "size": 0}
+			]
+		},
+		{
+			"name": "Netherlands",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 6007},
+				{"name": "Non-EU28 countries nor reporting country", "size": 61369},
+				{"name": "Reporting country", "size": 39203},
+				{"name": "Stateless", "size": 4563},
+				{"name": "Unknown", "size": 1667}
+			]
+		},
+		{
+			"name": "Norway",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 27103},
+				{"name": "Non-EU28 countries nor reporting country", "size": 26},
+				{"name": "Reporting country", "size": 6855},
+				{"name": "Stateless", "size": 845},
+				{"name": "Unknown", "size": 13}
+			]
+		},
+		{
+			"name": "Poland",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 29395},
+				{"name": "Non-EU28 countries nor reporting country", "size": 103883},
+				{"name": "Reporting country", "size": 84784},
+				{"name": "Stateless", "size": 43},
+				{"name": "Unknown", "size": 42}
+			]
+		},
+		{
+			"name": "Portugal",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 6352},
+				{"name": "Non-EU28 countries nor reporting country", "size": 8595},
+				{"name": "Reporting country", "size": 14949},
+				{"name": "Stateless", "size": 0},
+				{"name": "Unknown", "size": 0}
+			]
+		},
+		{
+			"name": "Romania",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 8245},
+				{"name": "Non-EU28 countries nor reporting country", "size": 8994},
+				{"name": "Reporting country", "size": 115485},
+				{"name": "Stateless", "size": 8},
+				{"name": "Unknown", "size": 63}
+			]
+		},
+		{
+			"name": "Slovakia",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 3109},
+				{"name": "Non-EU28 countries nor reporting country", "size": 665},
+				{"name": "Reporting country", "size": 3223},
+				{"name": "Stateless", "size": 0},
+				{"name": "Unknown", "size": 0}
+			]
+		},
+		{
+			"name": "Slovenia",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 2762},
+				{"name": "Non-EU28 countries nor reporting country", "size": 9903},
+				{"name": "Reporting country", "size": 2755},
+				{"name": "Stateless", "size": 0},
+				{"name": "Unknown", "size": 0}
+			]
+		},
+		{
+			"name": "Spain",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 106174},
+				{"name": "Non-EU28 countries nor reporting country", "size": 183675},
+				{"name": "Reporting country", "size": 52109},
+				{"name": "Stateless", "size": 156},
+				{"name": "Unknown", "size": 0}
+			]
+		},
+		{
+			"name": "Sweden",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 2976},
+				{"name": "Non-EU28 countries nor reporting country", "size": 78158},
+				{"name": "Reporting country", "size": 20372},
+				{"name": "Stateless", "size": 5439},
+				{"name": "Unknown", "size": 511}
+			]
+		},
+		{
+			"name": "Switzerland",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 90219},
+				{"name": "Non-EU28 countries nor reporting country", "size": 37382},
+				{"name": "Reporting country", "size": 25952},
+				{"name": "Stateless", "size": 6},
+				{"name": "Unknown", "size": 68}
+			]
+		},
+		{
+			"name": "United Kingdom",
+			"children": [
+				{"name": "EU28 countries except reporting country", "size": 269241},
+				{"name": "Non-EU28 countries nor reporting country", "size": 278587},
+				{"name": "Reporting country", "size": 83624},
+				{"name": "Stateless", "size": 0},
+				{"name": "Unknown", "size": 0}
+			]
+		}
+	]
+}

@@ -42,7 +42,7 @@ $("#svgBarchart").css({top: 550, position:'absolute'});
 tip = d3.tip()
 	.attr('class', 'd3-tip')
 	.offset([-10, 0])
-	.html(function(d) { return "<span style = 'color: #ca85ff'>" + d.value.toLocaleString() + "</span>";
+	.html(function(d) { return "<span style = 'color: #d500fa'>" + d.value.toLocaleString() + "</span>";
 })
 
 svg.call(tip);
@@ -126,15 +126,13 @@ d3.json("/Data/immigrationData.json", function(error, data) { Object.keys(data).
 		.on('mouseover', tip.show)
 		.on('mouseout', tip.hide)
 	
-	// call 'sort'-function when change in sorting checkbox
-	d3.select("#sortingCheckbox").on("change", sortBarchart);
-	
-	// d3.select("#sortingRadio1").on("change", sortBarchart);
-	// d3.select("#sortingRadio2").on("change", sortBarchart);
+	// call 'sort'-function when radio button is clicked
+	d3.select("#sortingRadio1").on("click", sortBarchart);
+	d3.select("#sortingRadio2").on("click", sortBarchart);
 	
 	// sort or unsort the barchart
     function sortBarchart() {
-    	var x0 = x.domain(bc_data.sort(this.checked
+    	var x0 = x.domain(bc_data.sort(this.value == "2"
         	? function(a, b) { return b.value - a.value; }
         	: function(a, b) { return d3.ascending(a.id, b.id); })
         	.map(function(d) { return d.id; }))
