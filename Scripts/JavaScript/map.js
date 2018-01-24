@@ -49,7 +49,7 @@ d3.json("/Data/mapData.json", function(error, data) { Object.keys(data).forEach(
 
 	// create color palette function
     var paletteScale = d3.scale.sqrt()
-            .domain([minValue,maxValue])
+            .domain([minValue, maxValue])
             .range(["#fcebff", "#3f004d"]);
 
 	// fill dataset in appropriate format
@@ -76,13 +76,11 @@ d3.json("/Data/mapData.json", function(error, data) { Object.keys(data).forEach(
 			dataUrl: '/Data/eu.topojson',
 			borderColor: '#dedede',
 			borderWidth: .5,
-			highlightBorderWidth: 1,
+			highlightBorderWidth: 3,
 			// don't change color on mouse hover
 			highlightFillColor: function(geo) {
 				return geo['fillColor'] || '#8f8f8f';
 			},
-			// only change border
-			highlightBorderColor: '#ff0000',
 			// show desired information in tooltip
 			popupTemplate: function(geo, data) {
 				// show different tooltip if data of country isn't present in dataset
@@ -102,5 +100,4 @@ d3.json("/Data/mapData.json", function(error, data) { Object.keys(data).forEach(
 			});
 		}
 	})
-	// map.legend({legendTitle: 'Map Legend!'});
 });

@@ -119,3 +119,7 @@ With this information per country, I color coded the Datamaps map of Europe. A d
 # Day 12 (23-01)  
 Today I completed the sunburst chart. At the moment it contains all the countries in the inner ring, and for every country the composition of the immigration stream. The sunburst is zoomable, so you can click on a country to take a closer look at it. At the moment the chart is at a different html page than the other visualizations, because the script gets confused with variable names and svg appends. A screenshot of the sunburst is found below.  
 ![](doc/sunburst.png)  
+  
+# Day 13 (24-01)  
+Today I relocated the sunburst chart to the main visualizations-page. It now stands right to the map, above the bar chart. The color scheme of the sunburst consists of the same range as the colors of the map. I also added a map legend, consisting of a color gradient and some text.  For the bar chart I changed the checkbox to sort the bars to two radio buttons, so the user is clearly informed what kind of sortation (s)he is looking at. Finally, I added a tooltip to the sunburst. This works also while zoomed in. A screenshot of the visualization page is found below.  
+![](doc/visualizationpage_(24-01).png) 
