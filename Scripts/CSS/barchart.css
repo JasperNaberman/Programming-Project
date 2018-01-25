@@ -7,6 +7,12 @@
 * A css-script for the barchart assignment
 */
 
+#svgBarchart {
+	top: 550;
+	position:'absolute';
+	z-index: -1;
+}
+
 label {
 	font: 12px sans-serif;
 }
@@ -74,5 +80,5 @@ label {
 }
 
 .top-buffer { 
-	margin-top:55px;
+	margin-top: 20px;
 }

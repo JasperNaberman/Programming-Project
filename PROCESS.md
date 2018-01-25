@@ -123,3 +123,7 @@ Today I completed the sunburst chart. At the moment it contains all the countrie
 # Day 13 (24-01)  
 Today I relocated the sunburst chart to the main visualizations-page. It now stands right to the map, above the bar chart. The color scheme of the sunburst consists of the same range as the colors of the map. I also added a map legend, consisting of a color gradient and some text.  For the bar chart I changed the checkbox to sort the bars to two radio buttons, so the user is clearly informed what kind of sortation (s)he is looking at. Finally, I added a tooltip to the sunburst. This works also while zoomed in. A screenshot of the visualization page is found below.  
 ![](doc/visualizationpage_(24-01).png) 
+  
+# Day 14 (25-01)
+Today I added more interactivity for the user by linking the three visualizations with each other. Now, when the user clicks on a bar, the sunburst zooms in on the country of that bar. The same holds for the map; when the user clicks on a country, the sunburst is updated for that country. I also added a drop down menu where the user can select a country. At the moment that fails to deliver any form of action, but eventually it will hopefully update the sunburst as well.  
+  

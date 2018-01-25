@@ -21,16 +21,6 @@ d3.json("/Data/mapData.json", function(error, data) { Object.keys(data).forEach(
 	mapCode[mapCounter] = data[key]["code"];
 	mapCounter++
 	});
-	
-	// total = 0
-// 	for (i = 0; i < mapPopu.length; i++) {
-// 		total += mapImmi[i]
-// 	}
-// 	console.log("total: ", total)
-// 	for (i = 0; i < mapPopu.length; i++) {
-// 		relative = mapImmi[i] / total
-// 		console.log(mapCountries[i], relative * 100)
-// 	}
 
 	mapData = []
 	for (i = 0; i < mapPopu.length; i++) {
@@ -48,7 +38,7 @@ d3.json("/Data/mapData.json", function(error, data) { Object.keys(data).forEach(
 	var maxValue = Math.max.apply(null, onlyValues);
 
 	// create color palette function
-    var paletteScale = d3.scale.sqrt()
+    var paletteScale = d3.scale.log()
             .domain([minValue, maxValue])
             .range(["#fcebff", "#3f004d"]);
 
@@ -96,7 +86,7 @@ d3.json("/Data/mapData.json", function(error, data) { Object.keys(data).forEach(
 		},
 		done: function(datamap) {
 			datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
-				alert(geography.properties.name);
+				clickBarchartOrMap(geography.properties.name)
 			});
 		}
 	})
