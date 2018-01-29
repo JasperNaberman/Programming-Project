@@ -131,7 +131,7 @@ function drawBarchart() {
 			.attr("y", function(d) { return y(d.value); })
 			.attr("height", function(d) { return height - y(d.value); })
 			.on('click', function(d) { zoomSunburst(d.id); selectDropdownCountry(d.id) })
-			.on('mouseover', function(d) { tip.show(d); })
+			.on('mouseover', function(d) { tip.show(d); highlightCountryBarchart(d.id) })
 			.on('mouseout', tip.hide)
 	
 		// call 'sort'-function when radio button is clicked

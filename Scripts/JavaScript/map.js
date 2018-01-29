@@ -21,7 +21,15 @@ d3.json("/Data/mapData.json", function(error, data) { Object.keys(data).forEach(
 	mapCode[mapCounter] = data[key]["code"];
 	mapCounter++
 	});
-
+	
+	function highlightCountryBarchart(countryName) {
+		for (i = 0; i < mapCountries.length; i++) {
+			if (mapCountries[i] == countryName) {
+				console.log(mapCountries[i], mapCode[i])
+			}
+		}
+	}
+	
 	mapData = []
 	for (i = 0; i < mapPopu.length; i++) {
 		country = []
