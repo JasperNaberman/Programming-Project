@@ -11,8 +11,8 @@ var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 
 var grd = ctx.createLinearGradient(0, 170, 0, 0);
-grd.addColorStop(0, "#3f004d");
-grd.addColorStop(1, "#fcebff");
+grd.addColorStop(0, "#fcebff");
+grd.addColorStop(1, "#3f004d");
 
 ctx.fillStyle = grd;
-ctx.fillRect(0, 0, 30, 200);
+ctx.fillRect(0, 0, 25, 200);

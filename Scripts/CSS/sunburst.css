@@ -15,3 +15,13 @@ div.tooltip {
 	pointer-events: none;
 	color: white;
 }
+
+#sunburstColumn {
+	font-size: 20px;
+	font-family: sans-serif;
+}
+
+#subTitleSunburst {
+	font-size: 15px;
+	font-family: sans-serif;
+}

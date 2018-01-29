@@ -45,43 +45,35 @@
 		</nav>
 		<div class="container">
 			<h1>Visualizations</h1>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="btn-group">
-						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Select country: <span class="caret"></span></button>
-						<ul class="dropdown-menu scrollable-menu" role="menu">
-							<li><a href="#">Austria</a></li><li><a href="#">Belgium</a></li><li><a href="#">Bulgaria</a></li><li><a href="#">Croatia</a></li>
-							<li><a href="#">Cyprus</a></li><li><a href="#">Czech Republic</a></li><li><a href="#">Denmark</a></li><li><a href="#">Estonia</a></li>
-							<li><a href="#">Finland</a></li><li><a href="#">France</a></li><li><a href="#">Germany</a></li><li><a href="#">Greece</a></li>
-							<li><a href="#">Hungary</a></li><li><a href="#">Iceland</a></li><li><a href="#">Ireland</a></li><li><a href="#">Italy</a></li>
-							<li><a href="#">Latvia</a></li><li><a href="#">Liechtenstein</a></li><li><a href="#">Lithuania</a></li><li><a href="#">Luxembourg</a></li>
-							<li><a href="#">Malta</a></li><li><a href="#">Netherlands</a></li><li><a href="#">Norway</a></li><li><a href="#">Poland</a></li>
-							<li><a href="#">Portugal</a></li><li><a href="#">Romania</a></li><li><a href="#">Slovakia</a></li><li><a href="#">Slovenia</a></li>
-							<li><a href="#">Spain</a></li><li><a href="#">Sweden</a></li><li><a href="#">Switzerland</a></li><li><a href="#">United Kingdom</a></li>
-						<ul>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<select id="dropdownCountries" name="dropdownCountries" style="height:25px; width: 190px;" onchange="Class(this.id)">
+							<option id="Austria">Austria</option><option id="Belgium">Belgium</option><option id="Bulgaria">Bulgaria</option><option id="Croatia">Croatia</option><option id="Cyprus">Cyprus</option><option id="Czech Republic">Czech Republic</option><option id="Denmark">Denmark</option><option id="Estonia">Estonia</option><option id="Europe" selected="selected">Europe</option><option id="Finland">Finland</option><option id="France">France</option><option id="Germany">Germany</option><option id="Greece">Greece</option><option id="Hungary">Hungary</option><option id="Iceland">Iceland</option><option id="Ireland">Ireland</option><option id="Italy">Italy</option><option id="Latvia">Latvia</option><option id="Liechtenstein">Liechtenstein</option><option id="Lithuania">Lithuania</option><option id="Luxembourg">Luxembourg</option><option id="Malta">Malta</option><option id="Netherlands">Netherlands</option><option id="Norway">Norway</option><option id="Poland">Poland</option><option id="Portugal">Portugal</option><option id="Romania">Romania</option><option id="Slovakia">Slovakia</option><option id="Slovenia">Slovenia</option><option id="Spain">Spain</option><option id="Sweden">Sweden</option><option id="Switzerland">Switzerland</option><option id="United Kingdom">United Kingdom</option>
+						</select>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="container">
+		
+		<div class="container-fluid">
 			<div class="row">
-				<div class="col-lg-4">
-					<div id="mapEurope" style="height: 400px; width: 400px;"></div>
+				<div class="col-lg-4" id="mapColumn" style="width: 37.5%">
+					<div id="mapEurope" style="height: 500px; width: 500px;"></div>
 				</div>
-				<div class="col-lg-2">
+				<div class="col-lg-1" style="width: 12.5%">
 					<div class="wrapper" style="margin: 0 auto; width: 800px; position: absolute;">
-					   <div style="float: left;"><canvas id="myCanvas" width="30" height="200" style="border:1px solid #d3d3d3;"></canvas></div>
-					   <div style="float: left;" class="text" style="top:0; left:0;">
-					       Least amount of immigrants<br>per 1000 capita
-					       <br><br><br><br><br><br><br>
-					       Most amount of immigrants<br>per 1000 capita
+					   <div style="float: left;"><canvas id="myCanvas" width="30" height="200"></canvas></div>
+					   <div id="mapLegendText">
 					   </div>
 					</div>
 				</div>
 				<div class="col-lg-1"></div>
-				<div class="col-lg-5" id="sunburstColumn"></div>
+				<div class="col-lg-5" id="sunburstColumn">
+					<p style="text-align: center; position: relative; left: -28.75px;">The distribution of immigrants per country<br>
+						<p id="subTitleSunburst"style="text-align: center; position: relative; left: -28.75px;">(in absolute values)</p>
+					</p>
+				</div>
 			</div>
 		</div>
 		<script src="/Scripts/JavaScript/mapLegend.js"></script>

@@ -57,7 +57,6 @@ d3.json("/Data/sunburst.json", function(error, root) {
 		countryTotals.push(countryTotal);
 	}
 	
-	
 	var minDomain = Math.min(...countryTotals);
 	var maxDomain = Math.max(...countryTotals);
 	
@@ -75,13 +74,33 @@ d3.json("/Data/sunburst.json", function(error, root) {
 		.text(function(d) { return d.name + "\n" + formatNumber(d.value); })
 		.on("mouseover", function(d, i) {
 			d3.select(this).style("cursor", "pointer");
-			var totalSize = path.node().__data__.value;
-			var percentage = Math.round(((100 * d.value / totalSize) * 100) / percentBase);
-			var percentageString = percentage + "%";
-			tooltip.text(d.name + ": " + percentageString)
-				.style("opacity", 0.8)
-				.style("left", (d3.event.pageX) + 0 + "px")
-				.style("top", (d3.event.pageY) + 10 + "px");
+			
+			var nodePartition = partition.nodes(root);
+			if (d.name == "Europe") {
+				var totalSize = path.node().__data__.value;
+				var percentage = Math.round(((100 * d.value / totalSize) * 100) / percentBase);
+				var percentageString = percentage + "%";
+				
+				tooltip.text(d.name + ": " + d.value.toLocaleString() + " " + "(" + percentageString + ")")
+					.style("opacity", 0.8)
+					.style("left", (d3.event.pageX) + 0 + "px")
+					.style("top", (d3.event.pageY) + 10 + "px");
+			} else {
+				for (i = 0; i < partition.nodes(root).length; i++) {
+					if (nodePartition[i]["name"] == d.name) {
+						var subGroup = nodePartition[i]
+						var parentSize = subGroup.parent.value
+					}
+				}
+			
+				var totalSize = path.node().__data__.value;
+				var percentage = Math.round(((100 * d.value / totalSize) * 100) / percentBase);
+				var percentageString = percentage + "%";
+				tooltip.text(d.name + ": " + d.value.toLocaleString() + " " + "(" + percentageString + ")")
+					.style("opacity", 0.8)
+					.style("left", (d3.event.pageX) + 0 + "px")
+					.style("top", (d3.event.pageY) + 10 + "px");
+			}
 		})
 		.on("mouseout", function(d) {
 			d3.select(this).style("cursor", "default")
@@ -89,6 +108,7 @@ d3.json("/Data/sunburst.json", function(error, root) {
 		});
 		
 	function clickSunburst(d) {
+		selectDropdownCountry(d.name);
 		svg2.transition()
 			.duration(900)
 			.tween("scale", function() {
@@ -105,7 +125,7 @@ d3.json("/Data/sunburst.json", function(error, root) {
 	}
 });
 
-function clickBarchartOrMap(countryName) {
+function zoomSunburst(countryName) {
 	if (typeof(countryName) == "string") {
 		d3.json("/Data/sunburst.json", function(error, root) {
 			var nodePartition = partition.nodes(root);
@@ -129,6 +149,19 @@ function clickBarchartOrMap(countryName) {
 			}
 		})
 	}
+}
+
+function selectDropdownCountry(countryToSelect)
+{    
+    var DropdownCountry = document.getElementById('dropdownCountries');
+    DropdownCountry.value = countryToSelect;
+}
+
+function Class(str)
+{
+    var select = document.getElementById("dropdownCountries");
+    var option = select.options[select.selectedIndex];
+    zoomSunburst(option.id);
 }
 
 d3.select(self.frameElement).style("height", sunburstHeight + "px");

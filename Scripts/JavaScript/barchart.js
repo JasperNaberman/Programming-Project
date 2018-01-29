@@ -14,7 +14,7 @@ window.onload = function() {
 function drawBarchart() {
 	// set the dimensions of the canvas
 	margin = {top: 80, right: 20, bottom: 70, left: 70}, width = 1200 - margin.left - margin.right,
-		height = 550 - margin.top - margin.bottom;
+		height = 500 - margin.top - margin.bottom;
 
 	// set the ranges
 	x = d3.scale.ordinal().rangeRoundBands([0, width], 0.1);
@@ -57,7 +57,12 @@ function drawBarchart() {
 		if (error) throw error;
 	
 		if (data[key]["Total"] != "No Data Available") {
-			bc_data_total[bc_counter] = data[key]["Total"];
+			bc_data_EU28 = data[key]["EU28 countries except reporting country"];
+			bc_data_non_EU28 = data[key]["Non-EU28 countries nor reporting country"];
+			bc_data_reporting = data[key]["Reporting country"];
+			bc_data_stateless = data[key]["Stateless"];
+			bc_data_unknown = data[key]["Unknown"];
+			bc_data_total[bc_counter] = bc_data_EU28 + bc_data_non_EU28 + bc_data_reporting + bc_data_stateless + bc_data_unknown;
 			bc_countries[bc_counter] = key;
 			bc_counter++
 			}
@@ -125,8 +130,8 @@ function drawBarchart() {
 			.attr("width", x.rangeBand())
 			.attr("y", function(d) { return y(d.value); })
 			.attr("height", function(d) { return height - y(d.value); })
-			.on('click', function(d) { clickBarchartOrMap(d.id) })
-			.on('mouseover', tip.show)
+			.on('click', function(d) { zoomSunburst(d.id); selectDropdownCountry(d.id) })
+			.on('mouseover', function(d) { tip.show(d); })
 			.on('mouseout', tip.hide)
 	
 		// call 'sort'-function when radio button is clicked
@@ -164,5 +169,4 @@ function drawBarchart() {
 				.delay(delay);
 		}
 	});
-	
 }

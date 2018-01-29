@@ -127,3 +127,8 @@ Today I relocated the sunburst chart to the main visualizations-page. It now sta
 # Day 14 (25-01)
 Today I added more interactivity for the user by linking the three visualizations with each other. Now, when the user clicks on a bar, the sunburst zooms in on the country of that bar. The same holds for the map; when the user clicks on a country, the sunburst is updated for that country. I also added a drop down menu where the user can select a country. At the moment that fails to deliver any form of action, but eventually it will hopefully update the sunburst as well.  
   
+# Day 15 (26-01)
+I completed the dropdown menu with all the countries. At the moment, when one of the countries is selected, the sunburst will update for the corresponding country name. I would like to add 'Europe' as an option, so that the entire sunburst can be displayed. Also, when clicked on a country on a map, or the barchart, I want the dropdown menu to display the correct country name.  
+  
+# Day 16 (29-01)
+I added Europe as an option in the dropdown menu. When selected, the entire sunburst will be displayed. Because of this, that option is now the default when the site is loaded. I also changed the barchart data from selecting the 'Total' from the dataset to adding up all the other numbers. This is because I discovered an error in the data, where the total would not be equal to the sum of it's given parts. I made the sunburst tooltip to display '100%' when hovering over Europe.

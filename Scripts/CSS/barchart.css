@@ -21,14 +21,14 @@ label {
   display: none;
 }
 
-.bar{
+.bar {
   fill: #9f00c2;
   opacity: 0.7;
 }
 
-.bar:hover{
+/*.bar:hover {
   fill: #d500fa;
-}
+}*/
 
 .axis {
   font: 10px sans-serif;
