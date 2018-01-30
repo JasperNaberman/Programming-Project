@@ -30,6 +30,8 @@ d3.json("/Data/mapData.json", function(error, data) { Object.keys(data).forEach(
 		}
 	}
 	
+	// highlightCountryBarchart("Denmark")
+	
 	mapData = []
 	for (i = 0; i < mapPopu.length; i++) {
 		country = []
@@ -138,9 +140,13 @@ d3.json("/Data/mapData.json", function(error, data) { Object.keys(data).forEach(
 		},
 		done: function(datamap) {
 			datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
-				console.log(geography.id, mapData)
-				zoomSunburst(geography.properties.name)
-				selectDropdownCountry(geography.properties.name)
+				if (geography.id.length == 3) {
+					zoomSunburst(geography.properties.name)
+					selectDropdownCountry(geography.properties.name)
+				} else {
+					zoomSunburst("Europe")
+					selectDropdownCountry("Europe")
+				}
 			});
 		}
 		
