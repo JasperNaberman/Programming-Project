@@ -44,7 +44,7 @@ var tooltip = d3.select("body").append("div")
 	.attr("class", "tooltip")
 	.style("opacity", 0);
 
-d3.json("/Data/sunburst.json", function(error, root) {
+d3.json("../../Data/sunburst.json", function(error, root) {
 	if (error) throw error;
 
 	var countryTotals = [];
@@ -127,7 +127,7 @@ d3.json("/Data/sunburst.json", function(error, root) {
 
 function zoomSunburst(countryName) {
 	if (typeof(countryName) == "string") {
-		d3.json("/Data/sunburst.json", function(error, root) {
+		d3.json("../../Data/sunburst.json", function(error, root) {
 			var nodePartition = partition.nodes(root);
 			for (i = 0; i < nodePartition.length; i++) {
 				if (nodePartition[i]["name"] == countryName) {

@@ -53,7 +53,7 @@ function drawBarchart() {
 	bc_counter = 0
 	bc_data_total = []
 	bc_countries = []
-	d3.json("/Data/immigrationData.json", function(error, data) { Object.keys(data).forEach(function(key) {
+	d3.json("../../Data/immigrationData.json", function(error, data) { Object.keys(data).forEach(function(key) {
 		if (error) throw error;
 	
 		if (data[key]["Total"] != "No Data Available") {

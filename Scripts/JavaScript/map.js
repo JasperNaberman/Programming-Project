@@ -13,7 +13,7 @@ mapImmi = []
 mapCountries = []
 mapCode = []
 
-d3.json("/Data/mapData.json", function(error, data) { Object.keys(data).forEach(function(key) {
+d3.json("../../Data/mapData.json", function(error, data) { Object.keys(data).forEach(function(key) {
 	if (error) throw error;
 	mapPopu[mapCounter] = data[key]["population"];
 	mapImmi[mapCounter] = data[key]["immigrants"];
@@ -116,7 +116,7 @@ d3.json("/Data/mapData.json", function(error, data) { Object.keys(data).forEach(
 		fills: { defaultFill: '#8f8f8f' },
 		data: dataset,
 		geographyConfig: {
-			dataUrl: '/Data/eu.topojson',
+			dataUrl: '../../Data/eu.topojson',
 			borderColor: '#dedede',
 			borderWidth: .5,
 			highlightBorderWidth: 3,
