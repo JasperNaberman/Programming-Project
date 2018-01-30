@@ -7,8 +7,10 @@
 * A .js-script for the sunburst chart on the visualization page
 */
 
-var sunburstWidth = 400,
-    sunburstHeight = 400,
+
+
+var sunburstWidth = 450,
+    sunburstHeight = 450,
     radius = (Math.min(sunburstWidth, sunburstHeight) / 2) - 10;
 
 var formatNumber = d3.format(",d");
@@ -29,10 +31,9 @@ var arc = d3.svg.arc()
     .startAngle(function(d) { return Math.max(0, Math.min(2 * Math.PI, sunburstX(d.x))); })
     .endAngle(function(d) { return Math.max(0, Math.min(2 * Math.PI, sunburstX(d.x + d.dx))); })
     .innerRadius(function(d) { return Math.max(0, sunburstY(d.y)); })
-    .outerRadius(function(d) { return Math.max(0, sunburstY(d.y + d.dy)); });
+    .outerRadius(function(d) { return Math.max(0, sunburstY(d.y + d.dy)); })
+	.cornerRadius(function(d) { return 5; });
 	
-var percentBase = 100;
-
 var svg2 = d3.select("#sunburstColumn").append("svg")
     .attr("width", sunburstWidth)
     .attr("height", sunburstHeight)
@@ -57,31 +58,47 @@ d3.json("../../Data/sunburst.json", function(error, root) {
 		countryTotals.push(countryTotal);
 	}
 	
-	var minDomain = Math.min(...countryTotals);
-	var maxDomain = Math.max(...countryTotals);
+	// var minDomain = Math.min(...countryTotals);
+// 	var maxDomain = Math.max(...countryTotals);
+	var minDomain = 0;
+	var maxDomain = 100;
 	
 	color.domain([minDomain, maxDomain]);
 	path = svg2.selectAll("path")
 		.data(partition.nodes(root))
 		.enter().append("path")
 		.attr("d", arc)
-		.style("fill", function(d) { if ((d.children ? d : d.parent).name == "Europe") {
-			return "#8f8f8f";}
-			else { 
-				return color((d.children ? d : d.parent).value);}
+		.style("fill", function(d) {
+			if ((d.children ? d : d.parent).name == "Europe") {
+				return "#8f8f8f";
+			} else { 
+				var parentValue = d.parent.value;
+				var childValue = d.value;
+				var childPercentage = Math.round(((100 * childValue / parentValue) * 100) / 100);
+				test=40
+				console.log(color(test))
+				return color(childPercentage);
+				// if (d.depth == 2) {
+// 					return color(d.value);
+// 				} else {
+// 					return color(d.value);
+// 				}
+				// return color((d.children ? d : d.parent).value);
+			}
 			})
 		.on("click", clickSunburst)
 		.text(function(d) { return d.name + "\n" + formatNumber(d.value); })
 		.on("mouseover", function(d, i) {
+			highlightCountryBarchart(d.name, "highlight")
 			d3.select(this).style("cursor", "pointer");
 			
 			var nodePartition = partition.nodes(root);
 			if (d.name == "Europe") {
 				var totalSize = path.node().__data__.value;
-				var percentage = Math.round(((100 * d.value / totalSize) * 100) / percentBase);
+				var percentage = Math.round(((100 * d.value / totalSize) * 100) / 100);
 				var percentageString = percentage + "%";
 				
-				tooltip.text(d.name + ": " + d.value.toLocaleString() + " " + "(" + percentageString + ")")
+				tooltip.text(d.name + ": " + d.value.toLocaleString() + " " + "immigrants")
 					.style("opacity", 0.8)
 					.style("left", (d3.event.pageX) + 0 + "px")
 					.style("top", (d3.event.pageY) + 10 + "px");
@@ -92,23 +109,45 @@ d3.json("../../Data/sunburst.json", function(error, root) {
 						var parentSize = subGroup.parent.value
 					}
 				}
-			
-				var totalSize = path.node().__data__.value;
-				var percentage = Math.round(((100 * d.value / totalSize) * 100) / percentBase);
-				var percentageString = percentage + "%";
-				tooltip.text(d.name + ": " + d.value.toLocaleString() + " " + "(" + percentageString + ")")
-					.style("opacity", 0.8)
-					.style("left", (d3.event.pageX) + 0 + "px")
-					.style("top", (d3.event.pageY) + 10 + "px");
+					
+				if (d.depth == 2) {
+					highlightCountryBarchart(d.parent.name, "highlight")
+					var parentSize = d.parent.value;
+					var percentage = Math.round(((100 * d.value / parentSize) * 100) / 100);
+					var percentageString = percentage + "% ";
+					tooltip.text(d.name + ": " + d.value.toLocaleString() + " " + "(" + percentageString + "of " + d.parent.name + ")")
+						.style("opacity", 0.8)
+						.style("left", (d3.event.pageX) + 0 + "px")
+						.style("top", (d3.event.pageY) + 10 + "px");
+						
+				} else if (d.depth == 1) {
+					highlightCountryBarchart(d.name, "highlight")
+					var parentSize = path.node().__data__.value;
+					var percentage = Math.round(((100 * d.value / parentSize) * 100) / 100);
+					var percentageString = percentage + "% ";
+					tooltip.text(d.name + ": " + d.value.toLocaleString() + " " + "(" + percentageString + "of " + d.parent.name + ")")
+						.style("opacity", 0.8)
+						.style("left", (d3.event.pageX) + 0 + "px")
+						.style("top", (d3.event.pageY) + 10 + "px");
+				}
 			}
 		})
 		.on("mouseout", function(d) {
+			if (d.depth == 2) {
+				highlightCountryBarchart(d.parent.name, "de-highlight")
+			} else if (d.depth == 1) {
+				highlightCountryBarchart(d.name, "de-highlight")
+			}
 			d3.select(this).style("cursor", "default")
 			tooltip.style("opacity", 0);
 		});
 		
 	function clickSunburst(d) {
-		selectDropdownCountry(d.name);
+		if (d.depth == 2) {
+			selectDropdownCountry(d.parent.name);
+		} else {
+			selectDropdownCountry(d.name);
+		}
 		svg2.transition()
 			.duration(900)
 			.tween("scale", function() {

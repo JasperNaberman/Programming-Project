@@ -22,13 +22,13 @@ label {
 }
 
 .bar {
-  fill: #9f00c2;
+  fill: #7d4e88;
   opacity: 0.7;
 }
 
-/*.bar:hover {
-  fill: #d500fa;
-}*/
+.bar:hover {
+  fill: #b08db8;
+}
 
 .axis {
   font: 10px sans-serif;

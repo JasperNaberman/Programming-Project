@@ -13,6 +13,8 @@ mapImmi = []
 mapCountries = []
 mapCode = []
 
+var highlightCountryBarchart
+
 d3.json("../../Data/mapData.json", function(error, data) { Object.keys(data).forEach(function(key) {
 	if (error) throw error;
 	mapPopu[mapCounter] = data[key]["population"];
@@ -22,16 +24,18 @@ d3.json("../../Data/mapData.json", function(error, data) { Object.keys(data).for
 	mapCounter++
 	});
 	
-	function highlightCountryBarchart(countryName) {
+	highlightCountryBarchart = function(countryName, highlight) {
 		for (i = 0; i < mapCountries.length; i++) {
 			if (mapCountries[i] == countryName) {
-				console.log(mapCountries[i], mapCode[i])
+				if (highlight == "highlight") {
+					d3.selectAll('.datamaps-subunit.' + mapCode[i]).style('stroke-width', '2px').style('stroke-color', '#dedede');
+				} else {
+					d3.selectAll('.datamaps-subunit.' + mapCode[i]).style('stroke-width', '.5px');
+				}
 			}
 		}
 	}
-	
-	// highlightCountryBarchart("Denmark")
-	
+		
 	mapData = []
 	for (i = 0; i < mapPopu.length; i++) {
 		country = []
@@ -91,9 +95,9 @@ d3.json("../../Data/mapData.json", function(error, data) { Object.keys(data).for
 	element.appendChild(para);
 	
 	// create color palette function
-    var paletteScale = d3.scale.log()
+    var paletteScale = d3.scale.sqrt()
             .domain([minValue, maxValue])
-            .range(["#fcebff", "#3f004d"]);
+            .range(["#e5e5ef", "#000055"]);
 
 	// fill dataset in appropriate format
 	mapData.forEach(function(item){
@@ -101,7 +105,7 @@ d3.json("../../Data/mapData.json", function(error, data) { Object.keys(data).for
 		var value = item[1];
 		dataset[iso] = { immigrants: Math.round(value * 10) / 10, fillColor: paletteScale(value) };
 	});
-
+	
 	// render map
 	var map = new Datamap({
 		element: document.getElementById('mapEurope'),
@@ -119,7 +123,8 @@ d3.json("../../Data/mapData.json", function(error, data) { Object.keys(data).for
 			dataUrl: '../../Data/eu.topojson',
 			borderColor: '#dedede',
 			borderWidth: .5,
-			highlightBorderWidth: 3,
+			highlightBorderWidth: 2,
+			highlightBorderColor: '#dedede',
 			// don't change color on mouse hover
 			highlightFillColor: function(geo) {
 				return geo['fillColor'] || '#8f8f8f';

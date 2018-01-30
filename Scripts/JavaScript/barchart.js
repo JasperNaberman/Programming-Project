@@ -44,7 +44,7 @@ function drawBarchart() {
 	tip = d3.tip()
 		.attr('class', 'd3-tip')
 		.offset([-10, 0])
-		.html(function(d) { return "<center><span style = 'color: #d500fa'>" + d.id.toLocaleString() + "<br>" + d.value.toLocaleString() + "</span></center>";
+		.html(function(d) { return "<center><span style = 'color: #b08db8'>" + d.id.toLocaleString() + "<br>" + d.value.toLocaleString() + "</span></center>";
 	})
 
 	svg.call(tip);
@@ -53,6 +53,7 @@ function drawBarchart() {
 	bc_counter = 0
 	bc_data_total = []
 	bc_countries = []
+	
 	d3.json("../../Data/immigrationData.json", function(error, data) { Object.keys(data).forEach(function(key) {
 		if (error) throw error;
 	
@@ -131,8 +132,8 @@ function drawBarchart() {
 			.attr("y", function(d) { return y(d.value); })
 			.attr("height", function(d) { return height - y(d.value); })
 			.on('click', function(d) { zoomSunburst(d.id); selectDropdownCountry(d.id) })
-			.on('mouseover', function(d) { tip.show(d); highlightCountryBarchart(d.id) })
-			.on('mouseout', tip.hide)
+			.on('mouseover', function(d) { tip.show(d); highlightCountryBarchart(d.id, "highlight") })
+			.on('mouseout', function(d) { tip.hide(d); highlightCountryBarchart(d.id, "de-highlight") })
 	
 		// call 'sort'-function when radio button is clicked
 		d3.select("#sortingRadio1").on("click", sortBarchart);
