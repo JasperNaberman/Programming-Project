@@ -73,8 +73,6 @@ d3.json("../../Data/sunburst.json", function(error, root) {
 				var parentValue = d.parent.value;
 				var childValue = d.value;
 				var childPercentage = Math.round(((100 * childValue / parentValue) * 100) / 100);
-				test=40
-				console.log(color(test))
 				return color(childPercentage);
 			}
 			})

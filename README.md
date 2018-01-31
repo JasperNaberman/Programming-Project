@@ -13,7 +13,9 @@ The idea for this product is to provide a solid and neutral basis for further de
 #### Homepage  
 The website consists of a main homepage that shows the title and subtitle of the product, projected on an image. At the top of the page is a navigation bar, which contains links with symbols to the other webpages of the site.  
 ![](doc/homepage_(31-01).png)  
+  
 At the bottom of the page (when scrolled down) some general information is displayed. Some of the text is hyperlinked.  
+  
 ![](doc/homepageBottom_(31-01).png)  
   
 #### Visualization Page  
@@ -61,7 +63,7 @@ Note: a lot of these materials have their own respective licenses.
 #### API's and D3 Plugins  
 * [D3](https://d3js.org)
 * [D3 tip library](https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js)
-* [jQuery](https://jquery.com), [Bootstrap](https://getbootstrap.com)
+* [jQuery](https://jquery.com)
 * [Bootstrap](https://getbootstrap.com)
 * [TopoJSON](https://github.com/topojson/topojson)
 * [DataMaps](https://datamaps.github.io/)  
@@ -70,6 +72,7 @@ Note: a lot of these materials have their own respective licenses.
 * Homepage image: [click here](https://www.chathamhouse.org/expert/comment/syrian-refugees-are-not-security-threat-they-are-feared-be)
 * Story page image 'Problem': [click here](https://pixabay.com/nl/eritrea-landschap-tenten-hutten-105081/)
 * Story page image 'Response': [click here](https://commons.wikimedia.org/wiki/File:Refugees_on_a_boat_crossing_the_Mediterranean_sea,_heading_from_Turkish_coast_to_the_northeastern_Greek_island_of_Lesbos,_29_January_2016.jpg)
+  
   
 <p align="center"><i>
 This project is licensed under the terms of the MIT license.</br>
