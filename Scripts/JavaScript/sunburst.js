@@ -58,8 +58,6 @@ d3.json("../../Data/sunburst.json", function(error, root) {
 		countryTotals.push(countryTotal);
 	}
 	
-	// var minDomain = Math.min(...countryTotals);
-// 	var maxDomain = Math.max(...countryTotals);
 	var minDomain = 0;
 	var maxDomain = 100;
 	
@@ -78,12 +76,6 @@ d3.json("../../Data/sunburst.json", function(error, root) {
 				test=40
 				console.log(color(test))
 				return color(childPercentage);
-				// if (d.depth == 2) {
-// 					return color(d.value);
-// 				} else {
-// 					return color(d.value);
-// 				}
-				// return color((d.children ? d : d.parent).value);
 			}
 			})
 		.on("click", clickSunburst)

@@ -97,7 +97,7 @@ d3.json("../../Data/mapData.json", function(error, data) { Object.keys(data).for
 	// create color palette function
     var paletteScale = d3.scale.sqrt()
             .domain([minValue, maxValue])
-            .range(["#e5e5ef", "#000055"]);
+            .range(["#e9f5ef", "#16512f"]);
 
 	// fill dataset in appropriate format
 	mapData.forEach(function(item){
