@@ -88,7 +88,7 @@ function drawBarchart() {
 			.attr("text-anchor", "middle")  
 			.style("font-size", "20px")
 			.style("font-family", "sans-serif")
-			.text("The amount of immigrants that has entered a country in 2015");
+			.text("The number of immigrants that has entered a country in 2015");
 
 		// scale chart
 		x.domain(bc_data.map(function(d) { return d.id; }));
@@ -128,7 +128,7 @@ function drawBarchart() {
 	        .style("font-size", "10px")
 			.style("font-family", "sans-serif")
 			.attr("transform", "rotate(-90)")
-			.text("Amount of Immigrants");
+			.text("Number of Immigrants");
 		
 		// add bars to chart
 		svg.selectAll("bar")
