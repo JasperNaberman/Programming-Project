@@ -8,6 +8,32 @@ Student number: 10787224
 The idea for this product is to provide a solid and neutral basis for further debate on immigration using data from all around Europe to visualize the actual amount of immigration facing the continent. The ratio of the amount of immigrants per 1000 capita is shown, the absolute amount of immigrants per country, and the distribution of the nature of an immigration stream per country. A more comprehensive description of the product's features is given in the README.md-file of this repository.  
   
 ## Technical Design  
+#### HTML and Bootstrap  
+This repository knows 4 HTML-files. One for each page of the website; the homepage (index.html), the visualization page (visualizations.html), the story page (story.html) and the additional information page (additional_info.html). The pages are linked with each other through a Bootstrap navigation bar on each of the pages. All the pages hold the same title to be displayed in the website-tab of the browser. The tab will also show a silhouette of Europe as favicon.  
+For the guise design of the pages a lot of Bootstrap is used. How to use these elements and all possibilities of Bootstrap I mainly learned from w3schools.com. However, I did not use a pre-made template.  
+Next to the navigation bar I used jumbotrons, wells, the grid system and hero images (and hero text inside).  
+The visualization page also holds 2 radiobuttons, which will sort the bar chart as the user requests, and a dropdown menu which will zoom in on a country (or zoom out for entire Europe) in the sunburst.  
+  
+#### CSS  
+This repository knows 3 CSS-files. One for the homepage, one for the bar chart and one for the sunburst.  
+The file for the homepage mainly sets some attributes for the image, the text in the image and the jumbotron below, which are basically all the elements on the page.  
+The file for the bar chart does dome more work, setting the (hover)color of the bars, styling the tooltip of the chart and setting the layout of the radio buttons.  
+The file for the sunburst chart sets the color of the paths of the cells and styles the tooltip and title.
+  
+#### JavaScript  
+This repository knows 4 JavaScript-files. One file for the sunburst chart, one file for the bar chart, one file for the map of Europe and one file for the legend of the map. All these files are imported in one HTML-file; visualizations.html. This HTML-file calls all the scripts of the visualizations and places relevant div's and svg's at the correct location.  
+  
+* map.js: this script loads the data for the map and initiates a 'Datamap' using a custom TopoJSON-file. It specifies a popupTemplate as tooltip with the relevant information. It also holds some .on("click")-events, where the country on which the user clicks is zoomed in on in the sunburst, and the name of the country is shown in the dropdown menu. At the top of the file a function is specified which will highlight the relevant country when the function is called from a different file (i.e. when hovering over a country in the bar or sunburst chart this function is called, and the corresponding country will be highlighted in the map). This script also computes the maximum and minimum value in the map, and processes it to be displayed in a text string next to the legend of the map.  
+    * mapLegend.js: initializes a canvas element on which a gradient is drawn with the same maximum and minimum color scale as the map.  
+* sunburst.js: this script first declares some variables as the width, height, and several radiusus, later to be used to create the sunburst. Than it appends a svg-element with these properties the the correct Bootstrap-column in the DOM. After a tooltip is specified the script loads the data for the sunburst. It computes the correct color in the scale for each element of the data separately.  
+On hovering the mouse over the sunburst the tooltip is shown with some data information about the element that is hovered over. This will disappear when the mouse no longer hovers over the element. Also, when hovering over a country in the sunburst, the corresponding country will be highlighted in the map.  
+When a country is clicked in the sunburst, a function is called, which is defined later in the script, and which will zoom in on the clicked element, to let the user take a closer look at that element.  
+When an element is clicked the name of that element of it's parent is also displayed in the dropdown menu. When the inout of the dropdown menu changes, the sunburst will zoom in on the requested country.  
+Also a function is defined to be called by other scripts such as the map or the bar chart, which will also zoom in on the corresponding country.  
+* barchart.js: after setting some general variables this script appends a svg-element to the body with the declared properties. It loads the data from the datafile and pushes the whished values to an array as if it was a dict. It appends a title to the chart and appends the axes of the chart to the svg. Then it adds all the bars, which the height representing the value of that country in the data (i.e. the amount of immigrants of that country). Then the script defines a function which is called when the user clicks on the radio buttons and which will sort the bar chart either alphabetically with the names of the countries, or reversed numerical (from high to low), based on the amount of immigrants of the countries.  
+  
+#### Data  
+This repository knows 4 data files.
   
 ## Process and Development  
 #### Challenges  

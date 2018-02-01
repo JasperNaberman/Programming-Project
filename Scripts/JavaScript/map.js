@@ -154,7 +154,6 @@ d3.json("../../Data/mapData.json", function(error, data) { Object.keys(data).for
 				}
 			});
 		}
-		
 	})
 	d3.select(".datamap").style("width", "500px")
 });

@@ -7,8 +7,6 @@
 * A .js-script for the sunburst chart on the visualization page
 */
 
-
-
 var sunburstWidth = 450,
     sunburstHeight = 450,
     radius = (Math.min(sunburstWidth, sunburstHeight) / 2) - 10;

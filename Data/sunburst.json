@@ -318,7 +318,7 @@
 				{"name": "Non-EU28 countries nor reporting country", "size": 278587},
 				{"name": "Reporting country", "size": 83624},
 				{"name": "Stateless", "size": 0},
-				{"name": "Unknown", "size": 0}
+				{"name": "Unknown", "size": 1}
 			]
 		}
 	]
