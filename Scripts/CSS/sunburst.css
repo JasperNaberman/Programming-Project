@@ -1,3 +1,12 @@
+/* sunburst.css
+*
+* Jasper Naberman
+* 10787224
+* Programming Project
+*
+* A css-script for the sunburst chart on the visualization page
+*/
+
 path {
   stroke: #ffffff;
 }
@@ -16,12 +25,7 @@ div.tooltip {
 	color: white;
 }
 
-#sunburstColumn {
+#sunburst-column {
 	font-size: 20px;
-	font-family: sans-serif;
-}
-
-#subTitleSunburst {
-	font-size: 15px;
 	font-family: sans-serif;
 }

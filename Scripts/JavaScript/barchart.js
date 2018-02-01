@@ -11,69 +11,77 @@ window.onload = function() {
 	drawBarchart();
 }
 
+/*
+* This function is imported by visualizations.html
+* It appends an svg-element to the body of the page and draws a bar chart on it.
+*/
 function drawBarchart() {
 	// set the dimensions of the canvas
-	margin = {top: 80, right: 20, bottom: 70, left: 70}, width = 1200 - margin.left - margin.right,
+	var margin = {top: 80, right: 20, bottom: 70, left: 70}, 
+		width = 1200 - margin.left - margin.right,
 		height = 500 - margin.top - margin.bottom;
 
 	// set the ranges
-	x = d3.scale.ordinal().rangeRoundBands([0, width], 0.1);
-
-	y = d3.scale.linear().range([height, 0]);
+	var x = d3.scale.ordinal().rangeRoundBands([0, width], 0.1);
+	var y = d3.scale.linear().range([height, 0]);
 
 	// define the x-axis
-	axisX = d3.svg.axis()
+	var axisX = d3.svg.axis()
 		.scale(x)
-		.orient("bottom")
+		.orient("bottom");
 
 	// define the y-axis
-	axisY = d3.svg.axis()
+	var axisY = d3.svg.axis()
 		.scale(y)
 		.orient("left")
 		.tickSize(-width)
 		.ticks(10);
 
 	// add the SVG element
-	svg = d3.select("body").append("svg")
+	var svg = d3.select("body").append("svg")
 		.attr("id", "svgBarchart")
 		.attr("width", width + margin.left + margin.right)
 		.attr("height", height + margin.top + margin.bottom)
 		.append("g")
-		.attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 	
-	tip = d3.tip()
+	// initialize a tooltip
+	var tip = d3.tip()
 		.attr('class', 'd3-tip')
 		.offset([-10, 0])
-		.html(function(d) { return "<center><span style = 'color: #b08db8'>" + d.id.toLocaleString() + "<br>" + d.value.toLocaleString() + "</span></center>";
-	})
-
+		.html(function(d) { return "<center><span style = 'color: #b08db8'>" + d.id.toLocaleString() + "<br>" + 
+			d.value.toLocaleString() + "</span></center>"; });
 	svg.call(tip);
 
 	// load the data
-	bc_counter = 0
-	bc_data_total = []
-	bc_countries = []
+	var bc_counter = 0;
+	var bc_data_total = [];
+	var bc_countries = [];
 	
 	d3.json("../../Data/immigrationData.json", function(error, data) { Object.keys(data).forEach(function(key) {
 		if (error) throw error;
-	
+		
+		// store all the data in arrays
 		if (data[key]["Total"] != "No Data Available") {
-			bc_data_EU28 = data[key]["EU28 countries except reporting country"];
-			bc_data_non_EU28 = data[key]["Non-EU28 countries nor reporting country"];
-			bc_data_reporting = data[key]["Reporting country"];
-			bc_data_stateless = data[key]["Stateless"];
-			bc_data_unknown = data[key]["Unknown"];
+			var bc_data_EU28 = data[key]["EU28 countries except reporting country"];
+			var bc_data_non_EU28 = data[key]["Non-EU28 countries nor reporting country"];
+			var bc_data_reporting = data[key]["Reporting country"];
+			var bc_data_stateless = data[key]["Stateless"];
+			var bc_data_unknown = data[key]["Unknown"];
 			bc_data_total[bc_counter] = bc_data_EU28 + bc_data_non_EU28 + bc_data_reporting + bc_data_stateless + bc_data_unknown;
 			bc_countries[bc_counter] = key;
 			bc_counter++
 			}
 		});
-
-		bc_data = []
+		
+		// convert the data to a dict-like structure
+		var bc_data = [];
 		for (i = 0; i < bc_data_total.length; i++){
-			bc_data.push({"id" : bc_countries[i], "value" : bc_data_total[i]})
+			bc_data.push({"id" : bc_countries[i], "value" : bc_data_total[i]});
 		}
-	
+		
+		
+		// append a title to the chart
 		svg.append("text")
 			.attr("x", (width / 2))             
 			.attr("y", 0 - (margin.top / 2))
@@ -98,7 +106,7 @@ function drawBarchart() {
 			.attr("dx", "-.8em")
 			.attr("dy", "-.180em")
 			.style("text-anchor", "end")
-			.attr("transform", "rotate(-55)")
+			.attr("transform", "rotate(-55)");
 	
 		// append x-axis title
 		svg.append("text")
@@ -132,12 +140,12 @@ function drawBarchart() {
 			.attr("y", function(d) { return y(d.value); })
 			.attr("height", function(d) { return height - y(d.value); })
 			.on('click', function(d) { zoomSunburst(d.id); selectDropdownCountry(d.id) })
-			.on('mouseover', function(d) { tip.show(d); highlightCountryBarchart(d.id, "highlight") })
-			.on('mouseout', function(d) { tip.hide(d); highlightCountryBarchart(d.id, "de-highlight") })
+			.on('mouseover', function(d) { d3.select(this).style("cursor", "pointer"); tip.show(d); highlightCountryChart(d.id, "highlight") })
+			.on('mouseout', function(d) { tip.hide(d); highlightCountryChart(d.id, "de-highlight") });
 	
 		// call 'sort'-function when radio button is clicked
-		d3.select("#sortingRadio1").on("click", sortBarchart);
-		d3.select("#sortingRadio2").on("click", sortBarchart);
+		d3.select("#sorting-radio1").on("click", sortBarchart);
+		d3.select("#sorting-radio2").on("click", sortBarchart);
 	
 		// sort or unsort the barchart
 	    function sortBarchart() {
@@ -149,14 +157,16 @@ function drawBarchart() {
 
 	    	svg.selectAll(".bar")
 	        	.sort(function(a, b) { return x0(a.id) - x0(b.id); });
-
-	    	var transition = svg.transition().duration(1500),
-	        delay = function(d, i) { return i * 50; };
+			
+			// set the duration of the visualization
+			var transition = svg.transition().duration(1500);
+	        var delay = function(d, i) { return i * 50; };
 
 	    	transition.selectAll(".bar")
 	        	.delay(delay)
 	        	.attr("x", function(d) { return x0(d.id); });
-
+			
+			// sort the axis tick labels
 	    	transition.select(".x.axis")
 				.call(axisX)
 				.selectAll("text")

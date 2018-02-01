@@ -9,7 +9,7 @@ The idea for this product is to provide a solid and neutral basis for further de
   
 ## Technical Design  
 #### HTML and Bootstrap  
-This repository knows 4 HTML-files. One for each page of the website; the homepage (index.html), the visualization page (visualizations.html), the story page (story.html) and the additional information page (additional_info.html). The pages are linked with each other through a Bootstrap navigation bar on each of the pages. All the pages hold the same title to be displayed in the website-tab of the browser. The tab will also show a silhouette of Europe as favicon.  
+This repository knows 4 HTML-files. One for each page of the website; the homepage (index.html), the visualization page (visualizations.html), the story page (story.html) and the additional information page (additional-info.html). The pages are linked with each other through a Bootstrap navigation bar on each of the pages. All the pages hold the same title to be displayed in the website-tab of the browser. The tab will also show a silhouette of Europe as favicon.  
 For the guise design of the pages a lot of Bootstrap is used. How to use these elements and all possibilities of Bootstrap I mainly learned from w3schools.com. However, I did not use a pre-made template.  
 Next to the navigation bar I used jumbotrons, wells, the grid system and hero images (and hero text inside).  
 The visualization page also holds 2 radiobuttons, which will sort the bar chart as the user requests, and a dropdown menu which will zoom in on a country (or zoom out for entire Europe) in the sunburst.  
@@ -30,7 +30,7 @@ On hovering the mouse over the sunburst the tooltip is shown with some data info
 When a country is clicked in the sunburst, a function is called, which is defined later in the script, and which will zoom in on the clicked element, to let the user take a closer look at that element.  
 When an element is clicked the name of that element of it's parent is also displayed in the dropdown menu. When the inout of the dropdown menu changes, the sunburst will zoom in on the requested country.  
 Also a function is defined to be called by other scripts such as the map or the bar chart, which will also zoom in on the corresponding country.  
-* barchart.js: after setting some general variables this script appends a svg-element to the body with the declared properties. It loads the data from the datafile and pushes the whished values to an array as if it was a dict. It appends a title to the chart and appends the axes of the chart to the svg. Then it adds all the bars, which the height representing the value of that country in the data (i.e. the amount of immigrants of that country). Then the script defines a function which is called when the user clicks on the radio buttons and which will sort the bar chart either alphabetically with the names of the countries, or reversed numerical (from high to low), based on the amount of immigrants of the countries.  
+* barchart.js: after setting some general variables this script appends a svg-element to the body with the declared properties. It loads the data from the datafile and pushes the whished values to an array as if it was a dict. It appends a title to the chart and appends the axes of the chart to the svg. Then it adds all the bars, which the height representing the value of that country in the data (i.e. the amount of immigrants of that country). Then the script defines a function which is called when the user clicks on the radio buttons and which will sort the bar chart either alphabetically with the names of the countries, or reversed numerical (from high to low), based on the amount of immigrants of the countries. When a bar is clicked on the bar chart, a function is called to zoom in at the sunburst on the corresponding country.  
   
 #### Data  
 This repository knows 4 data files.  
@@ -85,9 +85,9 @@ Note: a lot of these materials have their own respective licenses.
     * The idea of a tooltip for the bar chart: [click here](http://bl.ocks.org/Caged/6476579)  
   
 #### Data Sources  
-All used data originated from [Eurostat](https://ec.europa.eu/eurostat/web/main/home), the statistical office of the European Union. The exact datasets used are:
-* [Immigration by age group, sex and citizenship](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=migr_imm1ctz&lang=en)
-* [Population on 1 January by age group, sex and citizenship](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=migr_pop1ctz&lang=en)  
+All used data originated from [Eurostat](http://ec.europa.eu/eurostat), the statistical office of the European Union. The exact datasets used are:
+* [Immigration by age group, sex and citizenship](http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=migr_imm1ctz&lang=en)
+* [Population on 1 January by age group, sex and citizenship](http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=migr_pop1ctz&lang=en)  
   
 #### API's and D3 Plugins  
 * [D3](https://d3js.org)

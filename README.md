@@ -37,9 +37,9 @@ On this page some additional information about the website is displayed. On the 
   
 ## Sources  
 #### Data Sources  
-All used data originated from [Eurostat](https://ec.europa.eu/eurostat/web/main/home), the statistical office of the European Union. The exact datasets used are:
-* [Immigration by age group, sex and citizenship](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=migr_imm1ctz&lang=en)
-* [Population on 1 January by age group, sex and citizenship](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=migr_pop1ctz&lang=en)  
+All used data originated from [Eurostat](http://ec.europa.eu/eurostat), the statistical office of the European Union. The exact datasets used are:
+* [Immigration by age group, sex and citizenship](http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=migr_imm1ctz&lang=en)
+* [Population on 1 January by age group, sex and citizenship](http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=migr_pop1ctz&lang=en)  
   
 #### Code Sources  
 Note: a lot of these materials have their own respective licenses.
