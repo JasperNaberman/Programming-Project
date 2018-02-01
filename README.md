@@ -73,6 +73,7 @@ Note: a lot of these materials have their own respective licenses.
 * Story page image 'Problem': [click here](https://pixabay.com/nl/eritrea-landschap-tenten-hutten-105081/)
 * Story page image 'Response': [click here](https://commons.wikimedia.org/wiki/File:Refugees_on_a_boat_crossing_the_Mediterranean_sea,_heading_from_Turkish_coast_to_the_northeastern_Greek_island_of_Lesbos,_29_January_2016.jpg)
   
+[![BCH compliance](https://bettercodehub.com/edge/badge/JasperNaberman/Programming-Project?branch=master)](https://bettercodehub.com/)  
   
 <p align="center"><i>
 This project is licensed under the terms of the MIT license.</br>
