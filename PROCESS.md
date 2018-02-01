@@ -138,4 +138,7 @@ I made the map so that when a country without data is clicked, the entire sunbur
 I made more interactivity for the user. Now, when hovering over a bar in the barchart, or over a piece in the sunburst, the corresponding country will be highlighted in the map by making it's border bigger. I also made the tooltip of the sunburst so, that it displays the percentage that the hovered piece is of it's parent, not of the entire Europe. Also, when clicked on one of the children of a country in the sunburst, the dropdown menu will no longer display nothing, but it will still display the parents name. I also added a corner radius to the sunburst, so the corners are nice and rounded. I tried to make the visualizations color-blind friendly, but have not yet succeeded.  
   
 # Day 18 (31-01)  
-Today I finalized the design choices of the website. I also removed the no-good whitespace at the right of the visualization page, and I de-bugged the navbar buttons on the homepage. I also updated the README file, so that it contains a recent description of the website.
+Today I finalized the design choices of the website. I also removed the no-good whitespace at the right of the visualization page, and I de-bugged the navbar buttons on the homepage. I also updated the README file, so that it contains a recent description of the website.  
+  
+# Day 19 (01-02)  
+Today I finished the report on the product in REPORT.md. I also streamlined my code a bit more with the help of Better Code Hub. I also already wrote a script for the demo video about the product, and than I made some very small and final changes to the appearance of the site and changed some text on it.
