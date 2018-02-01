@@ -111,28 +111,29 @@ d3.json("../../Data/sunburst.json", function(error, root) {
 						var parentSize = subGroup.parent.value;
 					}
 				}
+				// set the text for the tooltip
+				function makeTooltip(d, parentSize) {
+					var percentage = Math.round(((100 * d.value / parentSize) * 100) / 100);
+					var percentageString = percentage + "% ";
+					tooltip.text(d.name + ": " + d.value.toLocaleString() + " " + "(" + percentageString + "of " + d.parent.name + ")")
+						.style("opacity", 0.8)
+						.style("left", (d3.event.pageX) + 0 + "px")
+						.style("top", (d3.event.pageY) + 10 + "px");
+				}
 				// set the tooltip for when hovering over the second layer of the chart
 				if (d.depth == 2) {
 					// highlight the corresponding country in the map
-					highlightCountryBarchart(d.parent.name, "highlight");
+					highlightCountryChart(d.parent.name, "highlight");
+					// make the correct tooltip
 					var parentSize = d.parent.value;
-					var percentage = Math.round(((100 * d.value / parentSize) * 100) / 100);
-					var percentageString = percentage + "% ";
-					tooltip.text(d.name + ": " + d.value.toLocaleString() + " " + "(" + percentageString + "of " + d.parent.name + ")")
-						.style("opacity", 0.8)
-						.style("left", (d3.event.pageX) + 0 + "px")
-						.style("top", (d3.event.pageY) + 10 + "px");
+					makeTooltip(d, parentSize)
 				// set the tooltip for when hovering over the first layer of the chart (i.e. the countries)
 				} else if (d.depth == 1) {
 					// highlight the corresponding country in the map
-					highlightCountryBarchart(d.name, "highlight");
+					highlightCountryChart(d.name, "highlight");
+					// make the correct tooltip
 					var parentSize = path.node().__data__.value;
-					var percentage = Math.round(((100 * d.value / parentSize) * 100) / 100);
-					var percentageString = percentage + "% ";
-					tooltip.text(d.name + ": " + d.value.toLocaleString() + " " + "(" + percentageString + "of " + d.parent.name + ")")
-						.style("opacity", 0.8)
-						.style("left", (d3.event.pageX) + 0 + "px")
-						.style("top", (d3.event.pageY) + 10 + "px");
+					makeTooltip(d, parentSize)
 				}
 			}
 		})
@@ -159,21 +160,29 @@ d3.json("../../Data/sunburst.json", function(error, root) {
 			selectDropdownCountry(d.name);
 		}
 		// zoom in at the input argument (d)
-		svg2.transition()
-			.duration(900)
-			.tween("scale", function() {
-				var xd = d3.interpolate(sunburstX.domain(), [d.x, d.x + d.dx]),
-					yd = d3.interpolate(sunburstY.domain(), [d.y, 1]),
-					yr = d3.interpolate(sunburstY.range(), [d.y ? 20 : 0, radius]);
-				return function(t) { 
-					sunburstX.domain(xd(t)); sunburstY.domain(yd(t)).range(yr(t));
-				};
-			})
-			.selectAll("path")
-			.attrTween("d", function(d) { return function() { return arc(d); }; 
-		});
+		zoomTransition(d)
 	}
 });
+
+/*
+* This function is called when clicking on one of the visualization
+* It zooms in at the sunburst at selected element to let the user take a closer look.
+*/
+function zoomTransition(d) {
+	svg2.transition()
+		.duration(900)
+		.tween("scale", function() {
+			var xd = d3.interpolate(sunburstX.domain(), [d.x, d.x + d.dx]),
+				yd = d3.interpolate(sunburstY.domain(), [d.y, 1]),
+				yr = d3.interpolate(sunburstY.range(), [d.y ? 20 : 0, radius]);
+			return function(t) { 
+				sunburstX.domain(xd(t)); sunburstY.domain(yd(t)).range(yr(t));
+			};
+		})
+		.selectAll("path")
+		.attrTween("d", function(d) { return function() { return arc(d); }; 
+	});
+}
 
 /*
 * This function is called when clicking on the map or bar chart
@@ -190,19 +199,7 @@ function zoomSunburst(countryName) {
 				if (nodePartition[i]["name"] == countryName) {
 					d = nodePartition[i]
 					// zoom in on the sunburst
-					svg2.transition()
-						.duration(900)
-						.tween("scale", function() {
-							var xd = d3.interpolate(sunburstX.domain(), [d.x, d.x + d.dx]),
-							yd = d3.interpolate(sunburstY.domain(), [d.y, 1]),
-							yr = d3.interpolate(sunburstY.range(), [d.y ? 20 : 0, radius]);
-							return function(t) { 
-								sunburstX.domain(xd(t)); sunburstY.domain(yd(t)).range(yr(t));
-							};
-						})
-						.selectAll("path")
-						.attrTween("d", function(d) { return function() { return arc(d); }; 
-					});
+					zoomTransition(d)
 				}
 			}
 		})
