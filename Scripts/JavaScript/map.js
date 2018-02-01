@@ -78,10 +78,10 @@ d3.json("../../Data/mapData.json", function(error, data) { Object.keys(data).for
 	// create the legend text
 	var node1 = document.createTextNode(textMax + " - Highest amount"),
 		node2 = document.createTextNode("of immigrants "),
-		node3 = document.createTextNode("per 1000 capita"),
+		node3 = document.createTextNode("per 1000 capita in 2015"),
 		node4 = document.createTextNode(textMin + " - Lowest amount"),
 		node5 = document.createTextNode("of immigrants "),
-		node6 = document.createTextNode("per 1000 capita");
+		node6 = document.createTextNode("per 1000 capita in 2015");
 	
 	// set the text in the right order
 	para.appendChild(node1);
